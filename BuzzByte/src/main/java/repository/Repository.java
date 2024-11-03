@@ -7,9 +7,9 @@ import java.util.List;
 
 
 public class Repository implements IRepository {
-    private String url;       // should be like "jdbc:postgresql://localhost:5432/buzzbytedb";
-    private String user;      // should be like "buzzbytedev";
-    private String password;  // should be like "buzz".
+    private final String url;       // should be like "jdbc:postgresql://localhost:5432/buzzbytedb";
+    private final String user;      // should be like "buzzbytedev";
+    private final String password;  // should be like "buzz".
 
     // Get database connection
     private Connection connect() throws SQLException {

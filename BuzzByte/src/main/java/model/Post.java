@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import model.comments.Comment;
+import model.comments.PostComment;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
@@ -24,11 +25,11 @@ public class Post {
     private String description;
     private String content;
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "userId", nullable = false)
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
     private User user;
     private String image;
-    @OneToMany(mappedBy = "posts", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Comment> comments;
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<PostComment> comments;
     private Long likes = 0L;
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)

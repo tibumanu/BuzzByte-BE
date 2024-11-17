@@ -1,16 +1,16 @@
 package model.likes;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
-public abstract class Likes {
+@NoArgsConstructor
+public abstract class Like {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;

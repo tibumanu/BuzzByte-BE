@@ -3,8 +3,9 @@ package model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import model.comments.Comments;
+import model.comments.Comment;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
@@ -14,10 +15,11 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Posts {
+@NoArgsConstructor
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long postId;
+    private Long id;
     private String title;
     private String description;
     private String content;
@@ -26,7 +28,7 @@ public class Posts {
     private User user;
     private String image;
     @OneToMany(mappedBy = "posts", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Comments> comments;
+    private List<Comment> comments;
     private Long likes = 0L;
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)

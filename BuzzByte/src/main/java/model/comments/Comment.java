@@ -1,9 +1,7 @@
 package model.comments;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
@@ -12,8 +10,10 @@ import java.time.Instant;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
-public abstract class Comments {
+@NoArgsConstructor
+public abstract class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;

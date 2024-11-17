@@ -3,17 +3,17 @@ package model.likes;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import model.news.News;
 
 @Entity
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
-public class NewsLikes extends Likes {
+@NoArgsConstructor
+public class NewsLike extends Like {
     @ManyToOne
-    @JoinColumn(name = "news_id", referencedColumnName = "newsId", nullable = false)
+    @JoinColumn(name = "news_id", referencedColumnName = "id", nullable = false)
     private News news;
 }

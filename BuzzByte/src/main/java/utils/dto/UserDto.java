@@ -1,4 +1,4 @@
-package utils;
+package utils.dto;
 
 
 public record UserDto(

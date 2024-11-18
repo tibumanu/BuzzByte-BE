@@ -2,6 +2,7 @@ package com.example.BuzzByte.model.comments;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
@@ -10,6 +11,7 @@ import java.time.Instant;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class Comment {
@@ -17,6 +19,7 @@ public abstract class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
     protected Long userId;
+    protected String content;
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private Instant createdAt;

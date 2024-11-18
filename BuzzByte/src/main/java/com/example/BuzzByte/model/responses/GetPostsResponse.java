@@ -1,6 +1,6 @@
-package model.responses;
+package com.example.BuzzByte.model.responses;
 
-import model.Post;
+import com.example.BuzzByte.model.Post;
 import org.springframework.data.domain.Page;
 
 public class GetPostsResponse {

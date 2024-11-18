@@ -1,5 +1,6 @@
 package com.example.BuzzByte.model;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,4 +18,8 @@ public class Tag {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    public Tag(String name) {
+        this.name = name;
+    }
 }

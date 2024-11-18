@@ -1,4 +1,4 @@
-package model.requests;
+package com.example.BuzzByte.model.requests;
 
 public class GetPostsRequest {
     private int page = 0;

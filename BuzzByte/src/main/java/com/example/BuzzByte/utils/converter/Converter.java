@@ -1,7 +1,11 @@
 package com.example.BuzzByte.utils.converter;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Collection;
 import java.util.List;
+
+@Component
 
 public interface Converter <E, D> {
     E createFromDto(D dto);

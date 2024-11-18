@@ -10,7 +10,6 @@ import java.time.Instant;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class Comment {

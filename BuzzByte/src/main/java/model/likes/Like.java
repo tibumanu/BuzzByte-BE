@@ -7,7 +7,6 @@ import lombok.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class Like {

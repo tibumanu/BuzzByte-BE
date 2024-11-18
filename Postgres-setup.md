@@ -11,7 +11,7 @@ Here are the commands required to run inside `psql` (seen in the first screensho
 
 CREATE USER buzzbytedev WITH PASSWORD 'buzz' CREATEDB;
 CREATE DATABASE buzzbytedb;
-ALTER DATABASE buzzbytedb OWNER TO abc2024;
+ALTER DATABASE buzzbytedb OWNER TO buzzbytedev;
 
 ```
 

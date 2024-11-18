@@ -2,10 +2,12 @@ package model.news;
 
 import jakarta.persistence.*;
 import lombok.*;
+import model.Tag;
 import model.comments.NewsComment;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,6 +27,13 @@ public class News {
     private String description;
     private String url;
     private String urlToImage;
+    @ManyToMany
+    @JoinTable(
+            name = "news_tags",
+            joinColumns = @JoinColumn(name = "news_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    private List<Tag> tags = new ArrayList<>();
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private Instant createdAt;

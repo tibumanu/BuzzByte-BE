@@ -18,11 +18,9 @@ public class PostService {
         this.postRepository = postRepository;
     }
 
-    public GetPostsResponse getPosts(int page, int limit) {
+    public Page<Post> getPosts(int page, int limit) {
         Pageable pageable = PageRequest.of(page, limit);
-        Page<Post> postsPage = postRepository.findAll(pageable);
 
-        int nextPage = postsPage.hasNext() ? page + 1 : -1;
-        return new GetPostsResponse(postsPage.getContent(), nextPage);
+        return postRepository.findAll(pageable);
     }
 }

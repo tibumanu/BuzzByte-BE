@@ -1,31 +1,20 @@
 package model.responses;
 
 import model.Post;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
 
 public class GetPostsResponse {
-    private List<Post> posts;
-    private int nextOffset;
+    private Page<Post> pagePost;
 
-    public GetPostsResponse(List<Post> posts, int nextOffset) {
-        this.posts = posts;
-        this.nextOffset = nextOffset;
+    public GetPostsResponse(Page<Post> pagePost) {
+        this.pagePost = pagePost;
     }
 
-    public List<Post> getPosts() {
-        return posts;
+    public Page<Post> getPagePost() {
+        return pagePost;
     }
 
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
-    }
-
-    public int getNextOffset() {
-        return nextOffset;
-    }
-
-    public void setNextOffset(int nextOffset) {
-        this.nextOffset = nextOffset;
+    public void setPagePost(Page<Post> pagePost) {
+        this.pagePost = pagePost;
     }
 }

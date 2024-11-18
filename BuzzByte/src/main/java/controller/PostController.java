@@ -18,6 +18,6 @@ public class PostController {
     //TODO: authorization
     @GetMapping("/posts")
     public GetPostsResponse getPosts(@RequestBody GetPostsRequest getPostsRequest) {
-        return postService.getPosts(getPostsRequest.getPage(), getPostsRequest.getLimit());
+        return new GetPostsResponse(postService.getPosts(getPostsRequest.getPage(), getPostsRequest.getLimit()));
     }
 }

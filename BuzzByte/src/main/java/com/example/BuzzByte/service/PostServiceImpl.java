@@ -7,6 +7,7 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.Hibernate;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -80,14 +82,21 @@ public class PostServiceImpl implements PostService{
     @Override
     @Transactional
     public Post getPost(long postId) {
-        return postRepository.findById(postId).orElseThrow(
-                () -> new EntityNotFoundException(String.format("Post with id %d not found", postId))
-        );
+        // get the Post, initialize tags and comments
+        Optional<Post> post = postRepository.findById(postId);
+        if(post.isEmpty()) {
+            throw new EntityNotFoundException(String.format("Post with id %d not found", postId));
+        }
+        // the below is done to avoid lazy initialization exception; could be done in the repository, somehow, dunno
+        Hibernate.initialize(post.get().getTags());
+        Hibernate.initialize(post.get().getComments());
+        return post.get();
     }
 
     @Override
     @Transactional
     public Post getPost(String postTitle) {
+        // TODO: fix lazy initialization exception
         return postRepository.findByTitle(postTitle).orElseThrow(
                 () -> new EntityNotFoundException(String.format("Post with title %s not found", postTitle))
         );
@@ -96,12 +105,14 @@ public class PostServiceImpl implements PostService{
     @Override
     @Transactional
     public List<Post> getAllPosts() {
+        // ?: might be deprecated + possible lazy initialization exception
         return postRepository.findAll();
     }
 
     @Override
     @Transactional
     public Page<Post> getPosts(int pageNumber, int pageSize) {
+        // ?: possible lazy initialization exception
         Pageable pageable = PageRequest.of(pageNumber, pageSize);
         return postRepository.findAll(pageable);    // works because PostRepository extends PagingAndSortingRepository via JpaRepository
     }
@@ -132,6 +143,23 @@ public class PostServiceImpl implements PostService{
             query.where(predicates.toArray(new Predicate[0]));
             return query.getRestriction();
         };
-    return postRepository.findAll(specification, pageable);
+        Page<Post> found = postRepository.findAll(specification, pageable);
+        found.forEach(post -> {
+            Hibernate.initialize(post.getTags());
+            Hibernate.initialize(post.getComments());
+        });
+        return found;
+    }
+
+    @Override
+    @Transactional
+    // deprecated; this was used to initialize tags and comments, now done in findAllByCriteria
+    public Page<Post> findAllByCriteriaWrapper(Long postId, String postTitle, String postContent, String postAuthor, String postCategory, Pageable pageable) {
+        Page<Post> posts = findAllByCriteria(postId, postTitle, postContent, postAuthor, postCategory, pageable);
+        posts.forEach(post -> {
+            Hibernate.initialize(post.getTags());
+            Hibernate.initialize(post.getComments());
+        });
+        return posts;
     }
 }

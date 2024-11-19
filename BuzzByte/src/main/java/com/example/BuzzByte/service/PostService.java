@@ -24,4 +24,7 @@ public interface PostService {
     Page<Post> getPosts(int pageNumber, int pageSize);
     @Transactional
     Page<Post> findAllByCriteria(Long postId, String postTitle, String postContent, String postAuthor, String postCategory, Pageable pageable);
+
+    @Transactional
+    Page<Post> findAllByCriteriaWrapper(Long postId, String postTitle, String postContent, String postAuthor, String postCategory, Pageable pageable);
 }

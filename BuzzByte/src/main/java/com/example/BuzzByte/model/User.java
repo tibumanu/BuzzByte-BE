@@ -29,5 +29,6 @@ public class User {
     // discutabil
     @Column(unique = true)
     private UUID uniqueKey;
-    private String role;
+    private Role role;
+    private boolean isEnabled;
 }

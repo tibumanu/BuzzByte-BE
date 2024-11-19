@@ -26,7 +26,8 @@ public class Post {
     @JoinTable(
             name = "news_tags",
             joinColumns = @JoinColumn(name = "news_id"),
-            inverseJoinColumns = @JoinColumn(name = "tag_id")
+            inverseJoinColumns = @JoinColumn(name = "tag_id"
+            )
     )
     private List<Tag> tags = new ArrayList<>();
     @ManyToOne

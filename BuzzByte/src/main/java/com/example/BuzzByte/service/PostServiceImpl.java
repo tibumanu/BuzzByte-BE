@@ -5,6 +5,7 @@ import com.example.BuzzByte.repository.PostRepository;
 import com.example.BuzzByte.utils.validation.GenericValidator;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.criteria.Predicate;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -42,6 +43,7 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
+    @Transactional
     public Post updatePost(Post post) {
         var updatedPost = postRepository.findById(post.getId()).orElseThrow(
                 () -> new EntityNotFoundException(String.format("Post with id %d not found", post.getId()))
@@ -76,6 +78,7 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
+    @Transactional
     public Post getPost(long postId) {
         return postRepository.findById(postId).orElseThrow(
                 () -> new EntityNotFoundException(String.format("Post with id %d not found", postId))
@@ -83,6 +86,7 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
+    @Transactional
     public Post getPost(String postTitle) {
         return postRepository.findByTitle(postTitle).orElseThrow(
                 () -> new EntityNotFoundException(String.format("Post with title %s not found", postTitle))
@@ -90,17 +94,20 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
+    @Transactional
     public List<Post> getAllPosts() {
         return postRepository.findAll();
     }
 
     @Override
+    @Transactional
     public Page<Post> getPosts(int pageNumber, int pageSize) {
         Pageable pageable = PageRequest.of(pageNumber, pageSize);
         return postRepository.findAll(pageable);    // works because PostRepository extends PagingAndSortingRepository via JpaRepository
     }
 
     @Override
+    @Transactional
     public Page<Post> findAllByCriteria(Long postId, String postTitle, String postContent, String postAuthor, String postCategory, Pageable pageable) {
         // use specification and criteria builder
         Specification<Post> specification = (root, query, criteriaBuilder) -> {

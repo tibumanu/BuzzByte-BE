@@ -1,6 +1,7 @@
 package com.example.BuzzByte;
 
 import com.example.BuzzByte.model.Post;
+import com.example.BuzzByte.model.Role;
 import com.example.BuzzByte.model.Tag;
 import com.example.BuzzByte.model.User;
 import com.example.BuzzByte.repository.*;
@@ -38,17 +39,17 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
+		demo();
 	}
 
 
-	/*public void demo() {
+	public void demo() {
 		// Ensure User entity with id 1 exists
 		User user = new User();
 		user.setUsername("username");
 		user.setEmail("email@example.com");
 		user.setHashedPassword("pwd");
-		user.setRole("role");
+		user.setRole(Role.ADMIN);
 		user.setUniqueKey(UUID.randomUUID());
 		user = userRepository.save(user);
 
@@ -71,5 +72,5 @@ public class BuzzByteApplication implements CommandLineRunner {
 		postRepository.save(post);
 
 		System.out.println("Post and User have been saved successfully.");
-	}*/
+	}
 }

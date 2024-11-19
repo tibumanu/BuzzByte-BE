@@ -33,8 +33,6 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
     @Override
     public PostDto createFromEntity(Post entity) {
 
-        System.out.println(entity.getTags());
-
         return new PostDto(entity.getId(),
                 entity.getTitle(),
                 entity.getDescription(),

@@ -16,6 +16,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -39,9 +40,67 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		demo();
+		setup();
 	}
 
+	public void addTagsInDB(){
+		/*
+		const categories = [
+        "JavaScript", "Python", "Java", "C#", "C++",
+        "Ruby", "Go", "Rust", "TypeScript", "PHP",
+        "Swift", "Kotlin", "Dart", "HTML & CSS",
+        "React", "Angular", "Vue.js", "Svelte", "Ember.js",
+        "Node.js", "Express.js", "Laravel", "Django", "Flask",
+        "Spring Boot", "ASP.NET",
+        "SQL", "NoSQL", "MongoDB", "PostgreSQL", "MySQL",
+        "Firebase", "GraphQL",
+        "AWS (Amazon Web Services)", "Google Cloud", "Azure",
+        "Docker", "Kubernetes", "Serverless Architecture",
+        "Continuous Integration (CI/CD)", "DevOps",
+        "Progressive Web Apps (PWAs)", "REST APIs",
+        "Microservices", "HTTP/HTTPS", "WebAssembly",
+        "Agile Methodology", "Scrum", "Kanban",
+        "Test-Driven Development (TDD)", "Pair Programming",
+        "Machine Learning", "Deep Learning", "Neural Networks",
+        "Natural Language Processing (NLP)", "Computer Vision",
+        "Reinforcement Learning",
+        "Data Science", "Data Visualization", "Big Data",
+        "Business Intelligence", "Predictive Analytics"
+    ];
+		 */
+		// add the above only if they don't exist
+		List<String> tags = Arrays.asList("JavaScript", "Python", "Java", "C#", "C++",
+				"Ruby", "Go", "Rust", "TypeScript", "PHP",
+				"Swift", "Kotlin", "Dart", "HTML & CSS",
+				"React", "Angular", "Vue.js", "Svelte", "Ember.js",
+				"Node.js", "Express.js", "Laravel", "Django", "Flask",
+				"Spring Boot", "ASP.NET",
+				"SQL", "NoSQL", "MongoDB", "PostgreSQL", "MySQL",
+				"Firebase", "GraphQL",
+				"AWS (Amazon Web Services)", "Google Cloud", "Azure",
+				"Docker", "Kubernetes", "Serverless Architecture",
+				"Continuous Integration (CI/CD)", "DevOps",
+				"Progressive Web Apps (PWAs)", "REST APIs",
+				"Microservices", "HTTP/HTTPS", "WebAssembly",
+				"Agile Methodology", "Scrum", "Kanban",
+				"Test-Driven Development (TDD)", "Pair Programming",
+				"Machine Learning", "Deep Learning", "Neural Networks",
+				"Natural Language Processing (NLP)", "Computer Vision",
+				"Reinforcement Learning",
+				"Data Science", "Data Visualization", "Big Data",
+				"Business Intelligence", "Predictive Analytics");
+		for (String string : tags) {
+			Tag tag = new Tag();
+			tag.setName(string);
+			if(tagRepository.findByName(string).isEmpty()){
+				tagRepository.save(tag);
+			}
+		}
+	}
+
+	public void setup(){
+		addTagsInDB();
+	}
 
 	public void demo() {
 		// Ensure User entity with id 1 exists

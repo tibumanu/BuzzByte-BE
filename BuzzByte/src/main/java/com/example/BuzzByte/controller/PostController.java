@@ -59,12 +59,13 @@ public class PostController {
 
     // add post
     @PostMapping
-    public Result<Post> addPost(@RequestBody AddPostDto addPostDto) {
+    public Result<PostDto> addPost(@RequestBody AddPostDto addPostDto) {
         // get user from SecurityContextHolder
         var user = userService.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         Post post = postDtoConverter.createFromAddPostDto(addPostDto);
         post.setUser(user);
         postService.addPost(post);
-        return new Result<>(true, HttpStatus.OK.value(), "Post added successfully", post);
+        PostDto postDto = postDtoConverter.createFromEntity(post);
+        return new Result<>(true, HttpStatus.OK.value(), "Post added successfully", postDto);
     }
 }

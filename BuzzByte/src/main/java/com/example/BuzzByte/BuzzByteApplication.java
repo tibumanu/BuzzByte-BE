@@ -4,17 +4,24 @@ import com.example.BuzzByte.model.Post;
 import com.example.BuzzByte.model.Tag;
 import com.example.BuzzByte.model.User;
 import com.example.BuzzByte.repository.*;
+import com.example.BuzzByte.security.config.RsaKeyProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @SpringBootApplication
+@EnableTransactionManagement
+@EnableAsync
+@EnableConfigurationProperties(RsaKeyProperties.class)
 public class BuzzByteApplication implements CommandLineRunner {
 	@Autowired
 	private PostRepository postRepository;
@@ -31,11 +38,11 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		demo();
+
 	}
 
 
-	public void demo() {
+	/*public void demo() {
 		// Ensure User entity with id 1 exists
 		User user = new User();
 		user.setUsername("username");
@@ -64,5 +71,5 @@ public class BuzzByteApplication implements CommandLineRunner {
 		postRepository.save(post);
 
 		System.out.println("Post and User have been saved successfully.");
-	}
+	}*/
 }

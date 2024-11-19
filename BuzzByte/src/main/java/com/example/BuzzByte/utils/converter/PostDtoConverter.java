@@ -1,5 +1,6 @@
 package com.example.BuzzByte.utils.converter;
 
+import com.example.BuzzByte.login_system.utils.converter.UserDtoConverter;
 import com.example.BuzzByte.model.Post;
 import com.example.BuzzByte.model.Tag;
 import com.example.BuzzByte.repository.TagRepository;

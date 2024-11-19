@@ -1,5 +1,7 @@
 package com.example.BuzzByte.utils.dto;
 
+import com.example.BuzzByte.login_system.utils.dto.UserDto;
+
 import java.time.Instant;
 import java.util.List;
 

@@ -46,7 +46,6 @@ public class RecoveryServiceImpl implements RecoveryService {
                 "</body>" +
                 "</html>";
         emailService.sendHtmlEmail(user.getEmail(), "Password reset", htmlContent);
-        System.out.println(user);
     }
 
     @Override

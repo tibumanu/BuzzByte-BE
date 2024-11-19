@@ -1812,3 +1812,690 @@ Consider defining a bean of type 'com.example.BuzzByte.repository.UserRepository
 2024-11-19T14:49:27.028+02:00  INFO 9572 --- [BuzzByte] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-11-19T14:49:27.032+02:00  INFO 9572 --- [BuzzByte] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-11-19T14:49:27.039+02:00  INFO 9572 --- [BuzzByte] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-19T15:38:46.556+02:00  INFO 4480 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Starting BuzzByteApplication using Java 21 with PID 4480 (D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE\BuzzByte\target\classes started by Alisa in D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE)
+2024-11-19T15:38:46.558+02:00  INFO 4480 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T15:38:46.598+02:00  INFO 4480 --- [BuzzByte] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-19T15:38:46.599+02:00  INFO 4480 --- [BuzzByte] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-19T15:38:47.494+02:00  INFO 4480 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-19T15:38:47.578+02:00  INFO 4480 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 9 JPA repository interfaces.
+2024-11-19T15:38:48.205+02:00  INFO 4480 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-19T15:38:48.217+02:00  INFO 4480 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T15:38:48.217+02:00  INFO 4480 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-19T15:38:48.262+02:00  INFO 4480 --- [BuzzByte] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T15:38:48.305+02:00  INFO 4480 --- [BuzzByte] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1706 ms
+2024-11-19T15:38:48.720+02:00  INFO 4480 --- [BuzzByte] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-19T15:38:48.772+02:00  INFO 4480 --- [BuzzByte] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-19T15:38:48.807+02:00  INFO 4480 --- [BuzzByte] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-19T15:38:49.064+02:00  INFO 4480 --- [BuzzByte] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-19T15:38:49.088+02:00  INFO 4480 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-19T15:38:49.229+02:00  INFO 4480 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@68d14a91
+2024-11-19T15:38:49.230+02:00  INFO 4480 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-19T15:38:50.267+02:00  INFO 4480 --- [BuzzByte] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-19T15:38:50.417+02:00  INFO 4480 --- [BuzzByte] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T15:38:50.668+02:00  INFO 4480 --- [BuzzByte] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-19T15:38:51.254+02:00 DEBUG 4480 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-19T15:38:51.306+02:00 DEBUG 4480 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-11-19T15:38:51.571+02:00  INFO 4480 --- [BuzzByte] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name jpaUserService
+2024-11-19T15:38:51.698+02:00 DEBUG 4480 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2024-11-19T15:38:51.731+02:00 DEBUG 4480 --- [BuzzByte] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-19T15:38:51.857+02:00 DEBUG 4480 --- [BuzzByte] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, BearerTokenAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-11-19T15:38:51.954+02:00 DEBUG 4480 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-19T15:38:52.249+02:00  INFO 4480 --- [BuzzByte] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-19T15:38:52.282+02:00  INFO 4480 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-19T15:38:52.290+02:00  INFO 4480 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Started BuzzByteApplication in 6.074 seconds (process running for 6.669)
+2024-11-19T15:38:54.355+02:00  INFO 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T15:38:54.356+02:00  INFO 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T15:38:54.356+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-11-19T15:38:54.356+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-11-19T15:38:54.357+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-11-19T15:38:54.359+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@281a57fd
+2024-11-19T15:38:54.360+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@36522f3
+2024-11-19T15:38:54.360+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-19T15:38:54.360+02:00  INFO 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-11-19T15:38:54.392+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2024-11-19T15:38:54.400+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:38:54.401+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2024-11-19T15:38:54.403+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2024-11-19T15:38:54.408+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:38:54.441+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-11-19T15:38:54.461+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:38:54.462+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:38:54.462+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:38:54.462+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-11-19T15:38:54.464+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:38:54.497+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:38:54.659+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
+2024-11-19T15:38:54.660+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:38:54.660+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
+2024-11-19T15:38:54.661+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-11-19T15:38:54.661+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-11-19T15:38:54.682+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-11-19T15:38:54.684+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-re (truncated)...]
+2024-11-19T15:38:54.690+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:38:54.703+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
+2024-11-19T15:38:54.703+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:38:54.703+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
+2024-11-19T15:38:54.704+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-11-19T15:38:54.704+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-11-19T15:38:55.510+02:00  INFO 4480 --- [BuzzByte] [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 790 ms
+2024-11-19T15:38:55.531+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-11-19T15:38:55.541+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-11-19T15:38:55.543+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:39:02.471+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2024-11-19T15:39:02.472+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:39:02.472+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2024-11-19T15:39:02.472+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2024-11-19T15:39:02.473+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:39:02.474+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-11-19T15:39:02.497+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:39:02.497+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:39:02.498+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:39:02.498+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-11-19T15:39:02.498+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:39:02.500+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:39:02.552+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
+2024-11-19T15:39:02.553+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:39:02.553+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
+2024-11-19T15:39:02.553+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-11-19T15:39:02.553+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-11-19T15:39:02.555+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-11-19T15:39:02.555+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-re (truncated)...]
+2024-11-19T15:39:02.555+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:39:02.562+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
+2024-11-19T15:39:02.562+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:39:02.562+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
+2024-11-19T15:39:02.562+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-11-19T15:39:02.563+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-11-19T15:39:02.566+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-11-19T15:39:02.569+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-11-19T15:39:02.570+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:39:05.451+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2024-11-19T15:39:05.452+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:39:05.452+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2024-11-19T15:39:05.452+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2024-11-19T15:39:05.454+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:39:05.455+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-11-19T15:39:05.474+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:39:05.475+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:39:05.475+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:39:05.476+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-11-19T15:39:05.477+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:39:05.480+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:39:05.514+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
+2024-11-19T15:39:05.514+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:39:05.514+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
+2024-11-19T15:39:05.515+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-11-19T15:39:05.515+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-11-19T15:39:05.515+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-11-19T15:39:05.516+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-re (truncated)...]
+2024-11-19T15:39:05.516+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:39:05.524+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
+2024-11-19T15:39:05.524+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:39:05.524+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
+2024-11-19T15:39:05.525+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-11-19T15:39:05.525+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-11-19T15:39:05.530+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-11-19T15:39:05.533+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-11-19T15:39:05.534+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:39:32.854+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /buzzbyte/auth/reset-password
+2024-11-19T15:39:32.855+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:39:32.855+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /buzzbyte/auth/reset-password
+2024-11-19T15:39:32.856+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/buzzbyte/auth/reset-password", parameters={}
+2024-11-19T15:39:32.856+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#resetPasswordRequest(String)
+2024-11-19T15:39:32.864+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [""ursuandreea2119@gmail.com""]
+2024-11-19T15:39:32.982+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.BuzzByte.login_system.utils.exception.ExceptionHandlerAdvice#handleOtherException(Exception)
+2024-11-19T15:39:32.983+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T15:39:32.987+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=false, code=500, message=User not found, data=)]
+2024-11-19T15:39:32.987+02:00  WARN 4480 --- [BuzzByte] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: User not found]
+2024-11-19T15:39:32.987+02:00 DEBUG 4480 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-11-19T15:42:32.538+02:00  INFO 4480 --- [BuzzByte] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T15:42:32.542+02:00  INFO 4480 --- [BuzzByte] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-19T15:42:32.548+02:00  INFO 4480 --- [BuzzByte] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-19T15:42:36.713+02:00  INFO 22416 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Starting BuzzByteApplication using Java 21 with PID 22416 (D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE\BuzzByte\target\classes started by Alisa in D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE)
+2024-11-19T15:42:36.714+02:00  INFO 22416 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T15:42:36.759+02:00  INFO 22416 --- [BuzzByte] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-19T15:42:36.759+02:00  INFO 22416 --- [BuzzByte] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-19T15:42:37.501+02:00  INFO 22416 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-19T15:42:37.634+02:00  INFO 22416 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 9 JPA repository interfaces.
+2024-11-19T15:42:38.178+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-19T15:42:38.188+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T15:42:38.189+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-19T15:42:38.233+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T15:42:38.233+02:00  INFO 22416 --- [BuzzByte] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1473 ms
+2024-11-19T15:42:38.580+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-19T15:42:38.621+02:00  INFO 22416 --- [BuzzByte] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-19T15:42:38.649+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-19T15:42:38.867+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-19T15:42:38.888+02:00  INFO 22416 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-19T15:42:39.015+02:00  INFO 22416 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a6b0a79
+2024-11-19T15:42:39.018+02:00  INFO 22416 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-19T15:42:40.007+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-19T15:42:40.163+02:00  INFO 22416 --- [BuzzByte] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T15:42:40.323+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-19T15:42:40.951+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-19T15:42:41.004+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-11-19T15:42:41.234+02:00  INFO 22416 --- [BuzzByte] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name jpaUserService
+2024-11-19T15:42:41.335+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2024-11-19T15:42:41.365+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-19T15:42:41.465+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, BearerTokenAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-11-19T15:42:41.542+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-19T15:42:41.809+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-19T15:42:41.842+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-19T15:42:41.851+02:00  INFO 22416 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Started BuzzByteApplication in 5.457 seconds (process running for 6.063)
+2024-11-19T15:43:34.264+02:00  INFO 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T15:43:34.265+02:00  INFO 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T15:43:34.265+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-11-19T15:43:34.265+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-11-19T15:43:34.265+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-11-19T15:43:34.267+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@60afea42
+2024-11-19T15:43:34.268+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4ff2e853
+2024-11-19T15:43:34.268+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-19T15:43:34.268+02:00  INFO 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-11-19T15:43:34.296+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2024-11-19T15:43:34.303+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:43:34.305+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2024-11-19T15:43:34.307+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2024-11-19T15:43:34.312+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:43:34.327+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-11-19T15:43:34.357+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:43:34.358+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:43:34.358+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:43:34.358+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-11-19T15:43:34.360+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:43:34.417+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:43:34.552+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
+2024-11-19T15:43:34.553+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:43:34.553+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
+2024-11-19T15:43:34.554+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-11-19T15:43:34.554+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-11-19T15:43:34.580+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-11-19T15:43:34.583+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-re (truncated)...]
+2024-11-19T15:43:34.590+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:43:34.610+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
+2024-11-19T15:43:34.612+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:43:34.612+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
+2024-11-19T15:43:34.612+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-11-19T15:43:34.613+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-11-19T15:43:35.429+02:00  INFO 22416 --- [BuzzByte] [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 801 ms
+2024-11-19T15:43:35.450+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-11-19T15:43:35.454+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-11-19T15:43:35.455+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:43:54.901+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /buzzbyte/auth/reset-password
+2024-11-19T15:43:54.902+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:43:54.902+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /buzzbyte/auth/reset-password
+2024-11-19T15:43:54.903+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/buzzbyte/auth/reset-password", parameters={}
+2024-11-19T15:43:54.903+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#resetPasswordRequest(String)
+2024-11-19T15:43:54.907+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [""ursuandreea2119@gmail.com<EOL>""]
+2024-11-19T15:43:55.051+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.BuzzByte.login_system.utils.exception.ExceptionHandlerAdvice#handleOtherException(Exception)
+2024-11-19T15:43:55.052+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T15:43:55.054+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=false, code=500, message=User not found, data=)]
+2024-11-19T15:43:55.056+02:00  WARN 22416 --- [BuzzByte] [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: User not found]
+2024-11-19T15:43:55.056+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-11-19T15:43:58.931+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /buzzbyte/auth/reset-password
+2024-11-19T15:43:58.932+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:43:58.932+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /buzzbyte/auth/reset-password
+2024-11-19T15:43:58.932+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/buzzbyte/auth/reset-password", parameters={}
+2024-11-19T15:43:58.933+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#resetPasswordRequest(String)
+2024-11-19T15:43:58.934+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [""ursuandreea2119@gmail.com""]
+2024-11-19T15:43:58.943+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.BuzzByte.login_system.utils.exception.ExceptionHandlerAdvice#handleOtherException(Exception)
+2024-11-19T15:43:58.944+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T15:43:58.944+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=false, code=500, message=User not found, data=)]
+2024-11-19T15:43:58.945+02:00  WARN 22416 --- [BuzzByte] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: User not found]
+2024-11-19T15:43:58.945+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-11-19T15:49:14.683+02:00  INFO 22416 --- [BuzzByte] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-11-19T15:49:14.704+02:00  INFO 22416 --- [BuzzByte] [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T15:49:14.708+02:00  INFO 22416 --- [BuzzByte] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-19T15:49:14.711+02:00  INFO 22416 --- [BuzzByte] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-19T15:49:14.819+02:00  INFO 22416 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Starting BuzzByteApplication using Java 21 with PID 22416 (D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE\BuzzByte\target\classes started by Alisa in D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE)
+2024-11-19T15:49:14.819+02:00  INFO 22416 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T15:49:15.155+02:00  INFO 22416 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-19T15:49:15.210+02:00  INFO 22416 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 9 JPA repository interfaces.
+2024-11-19T15:49:15.400+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-19T15:49:15.403+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T15:49:15.404+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-19T15:49:15.444+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T15:49:15.445+02:00  INFO 22416 --- [BuzzByte] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 623 ms
+2024-11-19T15:49:15.661+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-19T15:49:15.664+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-19T15:49:15.671+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-19T15:49:15.671+02:00  INFO 22416 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-11-19T15:49:15.714+02:00  INFO 22416 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@699af8d4
+2024-11-19T15:49:15.714+02:00  INFO 22416 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-11-19T15:49:15.947+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-19T15:49:16.066+02:00  INFO 22416 --- [BuzzByte] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T15:49:16.352+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-19T15:49:16.386+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-11-19T15:49:16.490+02:00  INFO 22416 --- [BuzzByte] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name jpaUserService
+2024-11-19T15:49:16.524+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
+2024-11-19T15:49:16.543+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-19T15:49:16.593+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, BearerTokenAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-11-19T15:49:16.638+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-19T15:49:16.830+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-19T15:49:16.855+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-19T15:49:16.860+02:00  INFO 22416 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Started BuzzByteApplication in 2.073 seconds (process running for 401.072)
+2024-11-19T15:49:16.862+02:00  INFO 22416 --- [BuzzByte] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-11-19T15:49:18.271+02:00  INFO 22416 --- [BuzzByte] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-11-19T15:49:18.282+02:00  INFO 22416 --- [BuzzByte] [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T15:49:18.282+02:00  INFO 22416 --- [BuzzByte] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-11-19T15:49:18.288+02:00  INFO 22416 --- [BuzzByte] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-11-19T15:49:18.392+02:00  INFO 22416 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Starting BuzzByteApplication using Java 21 with PID 22416 (D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE\BuzzByte\target\classes started by Alisa in D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE)
+2024-11-19T15:49:18.392+02:00  INFO 22416 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T15:49:18.640+02:00  INFO 22416 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-19T15:49:18.681+02:00  INFO 22416 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 9 JPA repository interfaces.
+2024-11-19T15:49:18.854+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-19T15:49:18.854+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T15:49:18.855+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-19T15:49:18.882+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T15:49:18.883+02:00  INFO 22416 --- [BuzzByte] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 488 ms
+2024-11-19T15:49:19.095+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-19T15:49:19.098+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-19T15:49:19.106+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-19T15:49:19.107+02:00  INFO 22416 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-11-19T15:49:19.157+02:00  INFO 22416 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@554f30c6
+2024-11-19T15:49:19.210+02:00  INFO 22416 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-11-19T15:49:19.434+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-19T15:49:19.598+02:00  INFO 22416 --- [BuzzByte] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T15:49:19.919+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-19T15:49:19.942+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-11-19T15:49:20.078+02:00  INFO 22416 --- [BuzzByte] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name jpaUserService
+2024-11-19T15:49:20.125+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2024-11-19T15:49:20.156+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-19T15:49:20.219+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, BearerTokenAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-11-19T15:49:20.281+02:00 DEBUG 22416 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-19T15:49:20.574+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-19T15:49:20.609+02:00  INFO 22416 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-19T15:49:20.613+02:00  INFO 22416 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Started BuzzByteApplication in 2.242 seconds (process running for 404.825)
+2024-11-19T15:49:20.614+02:00  INFO 22416 --- [BuzzByte] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-11-19T15:49:20.625+02:00  INFO 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T15:49:20.625+02:00  INFO 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T15:49:20.625+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-11-19T15:49:20.625+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-11-19T15:49:20.625+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-11-19T15:49:20.626+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4a72a3dc
+2024-11-19T15:49:20.626+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@43029
+2024-11-19T15:49:20.626+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-19T15:49:20.626+02:00  INFO 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-11-19T15:49:20.629+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2024-11-19T15:49:20.630+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:49:20.630+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2024-11-19T15:49:20.630+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2024-11-19T15:49:20.631+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:49:20.633+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-11-19T15:49:20.648+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:49:20.649+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:49:20.649+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:49:20.649+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-11-19T15:49:20.650+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:49:20.651+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:49:20.853+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
+2024-11-19T15:49:20.853+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:49:20.854+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
+2024-11-19T15:49:20.854+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-11-19T15:49:20.855+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-11-19T15:49:20.857+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-11-19T15:49:20.857+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-re (truncated)...]
+2024-11-19T15:49:20.858+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:49:20.876+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
+2024-11-19T15:49:20.877+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:49:20.877+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
+2024-11-19T15:49:20.877+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-11-19T15:49:20.877+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-11-19T15:49:21.419+02:00  INFO 22416 --- [BuzzByte] [http-nio-8080-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 538 ms
+2024-11-19T15:49:21.426+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-11-19T15:49:21.431+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-11-19T15:49:21.434+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:49:28.859+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /buzzbyte/auth/reset-password
+2024-11-19T15:49:28.859+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:49:28.860+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /buzzbyte/auth/reset-password
+2024-11-19T15:49:28.860+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/buzzbyte/auth/reset-password", parameters={}
+2024-11-19T15:49:28.860+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#resetPasswordRequest(String)
+2024-11-19T15:49:28.862+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to ["ursuandreea2119@gmail.com"]
+2024-11-19T15:49:28.931+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T15:49:28.934+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=true, code=200, message=Email with token sent. Please check your email., data=null)]
+2024-11-19T15:49:28.935+02:00 DEBUG 22416 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:52:06.842+02:00  INFO 22416 --- [BuzzByte] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T15:52:06.843+02:00  INFO 22416 --- [BuzzByte] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-11-19T15:52:06.845+02:00  INFO 22416 --- [BuzzByte] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-11-19T15:57:01.000+02:00  INFO 10508 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Starting BuzzByteApplication using Java 21 with PID 10508 (D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE\BuzzByte\target\classes started by Alisa in D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE)
+2024-11-19T15:57:01.004+02:00  INFO 10508 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T15:57:01.064+02:00  INFO 10508 --- [BuzzByte] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-19T15:57:01.066+02:00  INFO 10508 --- [BuzzByte] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-19T15:57:02.158+02:00  INFO 10508 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-19T15:57:02.262+02:00  INFO 10508 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 9 JPA repository interfaces.
+2024-11-19T15:57:02.916+02:00  INFO 10508 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-19T15:57:02.927+02:00  INFO 10508 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T15:57:02.928+02:00  INFO 10508 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-19T15:57:02.979+02:00  INFO 10508 --- [BuzzByte] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T15:57:02.980+02:00  INFO 10508 --- [BuzzByte] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1913 ms
+2024-11-19T15:57:03.367+02:00  INFO 10508 --- [BuzzByte] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-19T15:57:03.412+02:00  INFO 10508 --- [BuzzByte] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-19T15:57:03.440+02:00  INFO 10508 --- [BuzzByte] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-19T15:57:03.725+02:00  INFO 10508 --- [BuzzByte] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-19T15:57:03.757+02:00  INFO 10508 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-19T15:57:03.934+02:00  INFO 10508 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6572c37e
+2024-11-19T15:57:03.937+02:00  INFO 10508 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-19T15:57:05.040+02:00  INFO 10508 --- [BuzzByte] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-19T15:57:05.255+02:00  INFO 10508 --- [BuzzByte] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T15:57:05.524+02:00  INFO 10508 --- [BuzzByte] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-19T15:57:06.095+02:00 DEBUG 10508 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-19T15:57:06.139+02:00 DEBUG 10508 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-11-19T15:57:06.371+02:00  INFO 10508 --- [BuzzByte] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name jpaUserService
+2024-11-19T15:57:06.483+02:00 DEBUG 10508 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2024-11-19T15:57:06.526+02:00 DEBUG 10508 --- [BuzzByte] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-19T15:57:06.635+02:00 DEBUG 10508 --- [BuzzByte] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, BearerTokenAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-11-19T15:57:06.718+02:00 DEBUG 10508 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-19T15:57:06.986+02:00  INFO 10508 --- [BuzzByte] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-19T15:57:07.019+02:00  INFO 10508 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-19T15:57:07.027+02:00  INFO 10508 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Started BuzzByteApplication in 6.466 seconds (process running for 7.277)
+2024-11-19T15:57:11.685+02:00  INFO 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T15:57:11.686+02:00  INFO 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T15:57:11.686+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-11-19T15:57:11.687+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-11-19T15:57:11.687+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-11-19T15:57:11.689+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1cd03149
+2024-11-19T15:57:11.689+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@6d1fbdf4
+2024-11-19T15:57:11.690+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-19T15:57:11.690+02:00  INFO 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-11-19T15:57:11.725+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2024-11-19T15:57:11.735+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:57:11.737+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2024-11-19T15:57:11.739+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2024-11-19T15:57:11.746+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:57:11.766+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-11-19T15:57:11.794+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:57:11.796+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:57:11.797+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:57:11.797+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-11-19T15:57:11.799+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:57:11.848+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:57:12.044+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
+2024-11-19T15:57:12.045+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:57:12.045+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
+2024-11-19T15:57:12.046+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-11-19T15:57:12.046+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-11-19T15:57:12.072+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-11-19T15:57:12.074+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-re (truncated)...]
+2024-11-19T15:57:12.082+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:57:12.102+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
+2024-11-19T15:57:12.103+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:57:12.104+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
+2024-11-19T15:57:12.104+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-11-19T15:57:12.104+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-11-19T15:57:12.740+02:00  INFO 10508 --- [BuzzByte] [http-nio-8080-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 616 ms
+2024-11-19T15:57:12.763+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-11-19T15:57:12.766+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-11-19T15:57:12.767+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:57:52.567+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /buzzbyte/auth/login
+2024-11-19T15:57:52.568+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:57:52.568+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /buzzbyte/auth/login
+2024-11-19T15:57:52.568+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/buzzbyte/auth/login", parameters={}
+2024-11-19T15:57:52.569+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#login(LoginRequest)
+2024-11-19T15:57:52.591+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest[username=alisa, password=abc123]]
+2024-11-19T15:57:52.988+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-6] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-11-19T15:57:53.210+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T15:57:53.213+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=true, code=200, message=Login successful., data=eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiw (truncated)...]
+2024-11-19T15:57:53.214+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:58:08.295+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /buzzbyte/users
+2024-11-19T15:58:08.296+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:58:08.296+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /buzzbyte/users
+2024-11-19T15:58:08.297+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/buzzbyte/users", parameters={}
+2024-11-19T15:58:08.297+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.UserController#getUser()
+2024-11-19T15:58:08.303+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-7] horizationManagerBeforeMethodInterceptor : Authorizing method invocation ReflectiveMethodInvocation: public com.example.BuzzByte.utils.Result com.example.BuzzByte.controller.UserController.getUser(); target is of class [com.example.BuzzByte.controller.UserController]
+2024-11-19T15:58:08.324+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-7] horizationManagerBeforeMethodInterceptor : Failed to authorize ReflectiveMethodInvocation: public com.example.BuzzByte.utils.Result com.example.BuzzByte.controller.UserController.getUser(); target is of class [com.example.BuzzByte.controller.UserController] with authorization manager org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager@1d82aac8 and decision ExpressionAuthorizationDecision [granted=false, expressionAttribute=hasAnyAuthority('SCOPE_ADMIN', 'SCOPE_ARHEO', 'SCOPE_LABWORKER', 'SCOPE_GUEST')]
+2024-11-19T15:58:08.326+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.BuzzByte.login_system.utils.exception.ExceptionHandlerAdvice#handleAccessDeniedException(AccessDeniedException)
+2024-11-19T15:58:08.328+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T15:58:08.328+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=false, code=403, message=No permission., data=Access Denied)]
+2024-11-19T15:58:08.332+02:00  WARN 10508 --- [BuzzByte] [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authorization.AuthorizationDeniedException: Access Denied]
+2024-11-19T15:58:08.332+02:00 DEBUG 10508 --- [BuzzByte] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 403 FORBIDDEN
+2024-11-19T15:58:57.290+02:00  INFO 10508 --- [BuzzByte] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T15:58:57.293+02:00  INFO 10508 --- [BuzzByte] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-19T15:58:57.300+02:00  INFO 10508 --- [BuzzByte] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-19T15:59:01.682+02:00  INFO 22800 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Starting BuzzByteApplication using Java 21 with PID 22800 (D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE\BuzzByte\target\classes started by Alisa in D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE)
+2024-11-19T15:59:01.684+02:00  INFO 22800 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T15:59:01.737+02:00  INFO 22800 --- [BuzzByte] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-19T15:59:01.737+02:00  INFO 22800 --- [BuzzByte] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-19T15:59:02.550+02:00  INFO 22800 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-19T15:59:02.624+02:00  INFO 22800 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 9 JPA repository interfaces.
+2024-11-19T15:59:03.246+02:00  INFO 22800 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-19T15:59:03.257+02:00  INFO 22800 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T15:59:03.257+02:00  INFO 22800 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-19T15:59:03.304+02:00  INFO 22800 --- [BuzzByte] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T15:59:03.304+02:00  INFO 22800 --- [BuzzByte] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1566 ms
+2024-11-19T15:59:03.719+02:00  INFO 22800 --- [BuzzByte] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-19T15:59:03.761+02:00  INFO 22800 --- [BuzzByte] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-19T15:59:03.788+02:00  INFO 22800 --- [BuzzByte] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-19T15:59:04.020+02:00  INFO 22800 --- [BuzzByte] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-19T15:59:04.043+02:00  INFO 22800 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-19T15:59:04.176+02:00  INFO 22800 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f41c4ba
+2024-11-19T15:59:04.177+02:00  INFO 22800 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-19T15:59:05.367+02:00  INFO 22800 --- [BuzzByte] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-19T15:59:05.526+02:00  INFO 22800 --- [BuzzByte] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T15:59:05.788+02:00  INFO 22800 --- [BuzzByte] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-19T15:59:06.339+02:00 DEBUG 22800 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-19T15:59:06.389+02:00 DEBUG 22800 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-11-19T15:59:06.610+02:00  INFO 22800 --- [BuzzByte] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name jpaUserService
+2024-11-19T15:59:06.717+02:00 DEBUG 22800 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2024-11-19T15:59:06.747+02:00 DEBUG 22800 --- [BuzzByte] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-19T15:59:06.859+02:00 DEBUG 22800 --- [BuzzByte] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, BearerTokenAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-11-19T15:59:06.930+02:00 DEBUG 22800 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-19T15:59:07.190+02:00  INFO 22800 --- [BuzzByte] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-19T15:59:07.225+02:00  INFO 22800 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-19T15:59:07.233+02:00  INFO 22800 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Started BuzzByteApplication in 5.893 seconds (process running for 6.553)
+2024-11-19T15:59:51.142+02:00  INFO 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T15:59:51.143+02:00  INFO 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T15:59:51.143+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-11-19T15:59:51.143+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-11-19T15:59:51.143+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-11-19T15:59:51.145+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2f6a1976
+2024-11-19T15:59:51.146+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@3c3c114f
+2024-11-19T15:59:51.146+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-19T15:59:51.146+02:00  INFO 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-11-19T15:59:51.176+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2024-11-19T15:59:51.184+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:59:51.185+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2024-11-19T15:59:51.187+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2024-11-19T15:59:51.191+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:59:51.208+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-11-19T15:59:51.243+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:59:51.244+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:59:51.244+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2024-11-19T15:59:51.246+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-11-19T15:59:51.247+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T15:59:51.286+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:59:51.464+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
+2024-11-19T15:59:51.465+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:59:51.465+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
+2024-11-19T15:59:51.466+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-11-19T15:59:51.466+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-11-19T15:59:51.486+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-11-19T15:59:51.487+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-re (truncated)...]
+2024-11-19T15:59:51.494+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T15:59:51.519+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
+2024-11-19T15:59:51.519+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T15:59:51.520+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
+2024-11-19T15:59:51.520+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-11-19T15:59:51.520+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-11-19T15:59:52.061+02:00  INFO 22800 --- [BuzzByte] [http-nio-8080-exec-6] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 528 ms
+2024-11-19T15:59:52.148+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-11-19T15:59:52.151+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-11-19T15:59:52.151+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T16:00:11.309+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /buzzbyte/auth/login
+2024-11-19T16:00:11.310+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T16:00:11.310+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /buzzbyte/auth/login
+2024-11-19T16:00:11.310+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/buzzbyte/auth/login", parameters={}
+2024-11-19T16:00:11.310+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#login(LoginRequest)
+2024-11-19T16:00:11.332+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest[username=alisa, password=abc123]]
+2024-11-19T16:00:11.737+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-8] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-11-19T16:00:11.843+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T16:00:11.847+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=true, code=200, message=Login successful., data=eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiw (truncated)...]
+2024-11-19T16:00:11.848+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T16:00:13.155+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /buzzbyte/auth/login
+2024-11-19T16:00:13.156+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T16:00:13.156+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /buzzbyte/auth/login
+2024-11-19T16:00:13.157+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/buzzbyte/auth/login", parameters={}
+2024-11-19T16:00:13.157+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#login(LoginRequest)
+2024-11-19T16:00:13.158+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest[username=alisa, password=abc123]]
+2024-11-19T16:00:13.276+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-2] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-11-19T16:00:13.291+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T16:00:13.291+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=true, code=200, message=Login successful., data=eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiw (truncated)...]
+2024-11-19T16:00:13.292+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T16:00:35.089+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /buzzbyte/users
+2024-11-19T16:00:35.105+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-9] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2024-11-19T16:00:35.106+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-9] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@b665c9cd, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[SCOPE_ADMIN]]
+2024-11-19T16:00:35.107+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /buzzbyte/users
+2024-11-19T16:00:35.107+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/buzzbyte/users", parameters={}
+2024-11-19T16:00:35.108+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.UserController#getUser()
+2024-11-19T16:00:35.110+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-9] horizationManagerBeforeMethodInterceptor : Authorizing method invocation ReflectiveMethodInvocation: public com.example.BuzzByte.utils.Result com.example.BuzzByte.controller.UserController.getUser(); target is of class [com.example.BuzzByte.controller.UserController]
+2024-11-19T16:00:35.121+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-9] horizationManagerBeforeMethodInterceptor : Authorized method invocation ReflectiveMethodInvocation: public com.example.BuzzByte.utils.Result com.example.BuzzByte.controller.UserController.getUser(); target is of class [com.example.BuzzByte.controller.UserController]
+2024-11-19T16:00:35.127+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T16:00:35.132+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=true, code=200, message=Details about user served., data=UserDto[id=4, username=alisa, e (truncated)...]
+2024-11-19T16:00:35.134+02:00 DEBUG 22800 --- [BuzzByte] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T16:04:56.045+02:00  INFO 22800 --- [BuzzByte] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T16:04:56.049+02:00  INFO 22800 --- [BuzzByte] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-19T16:04:56.057+02:00  INFO 22800 --- [BuzzByte] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-19T16:04:58.740+02:00  INFO 12368 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Starting BuzzByteApplication using Java 21 with PID 12368 (D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE\BuzzByte\target\classes started by Alisa in D:\School\An 3\Sem 1\Proiect Colectiv\BuzzByte-BE)
+2024-11-19T16:04:58.742+02:00  INFO 12368 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T16:04:58.800+02:00  INFO 12368 --- [BuzzByte] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-19T16:04:58.801+02:00  INFO 12368 --- [BuzzByte] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-19T16:04:59.664+02:00  INFO 12368 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-19T16:04:59.748+02:00  INFO 12368 --- [BuzzByte] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 9 JPA repository interfaces.
+2024-11-19T16:05:00.290+02:00  INFO 12368 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-19T16:05:00.301+02:00  INFO 12368 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T16:05:00.301+02:00  INFO 12368 --- [BuzzByte] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-19T16:05:00.347+02:00  INFO 12368 --- [BuzzByte] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T16:05:00.348+02:00  INFO 12368 --- [BuzzByte] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1547 ms
+2024-11-19T16:05:00.709+02:00  INFO 12368 --- [BuzzByte] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-19T16:05:00.752+02:00  INFO 12368 --- [BuzzByte] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-19T16:05:00.780+02:00  INFO 12368 --- [BuzzByte] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-19T16:05:01.002+02:00  INFO 12368 --- [BuzzByte] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-19T16:05:01.024+02:00  INFO 12368 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-19T16:05:01.152+02:00  INFO 12368 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@45f1ba87
+2024-11-19T16:05:01.154+02:00  INFO 12368 --- [BuzzByte] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-19T16:05:02.131+02:00  INFO 12368 --- [BuzzByte] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-19T16:05:02.277+02:00  INFO 12368 --- [BuzzByte] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T16:05:02.572+02:00  INFO 12368 --- [BuzzByte] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-19T16:05:03.098+02:00 DEBUG 12368 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-19T16:05:03.147+02:00 DEBUG 12368 --- [BuzzByte] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 0 ResponseBodyAdvice
+2024-11-19T16:05:03.501+02:00  INFO 12368 --- [BuzzByte] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name jpaUserService
+2024-11-19T16:05:03.613+02:00 DEBUG 12368 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2024-11-19T16:05:03.650+02:00 DEBUG 12368 --- [BuzzByte] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-11-19T16:05:03.758+02:00 DEBUG 12368 --- [BuzzByte] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, BearerTokenAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-11-19T16:05:03.848+02:00 DEBUG 12368 --- [BuzzByte] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-19T16:05:04.161+02:00  INFO 12368 --- [BuzzByte] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-19T16:05:04.203+02:00  INFO 12368 --- [BuzzByte] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-19T16:05:04.213+02:00  INFO 12368 --- [BuzzByte] [restartedMain] c.example.BuzzByte.BuzzByteApplication   : Started BuzzByteApplication in 5.93 seconds (process running for 6.788)
+2024-11-19T16:05:07.235+02:00  INFO 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T16:05:07.236+02:00  INFO 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T16:05:07.236+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-11-19T16:05:07.237+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-11-19T16:05:07.238+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-11-19T16:05:07.239+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6336e2f3
+2024-11-19T16:05:07.311+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5ec1f2db
+2024-11-19T16:05:07.311+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-19T16:05:07.311+02:00  INFO 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 75 ms
+2024-11-19T16:05:07.347+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2024-11-19T16:05:07.356+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T16:05:07.358+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2024-11-19T16:05:07.360+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2024-11-19T16:05:07.366+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T16:05:07.383+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2024-11-19T16:05:07.412+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2024-11-19T16:05:07.414+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T16:05:07.415+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2024-11-19T16:05:07.415+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-11-19T16:05:07.417+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-11-19T16:05:07.452+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T16:05:07.621+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
+2024-11-19T16:05:07.621+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T16:05:07.622+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
+2024-11-19T16:05:07.622+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-11-19T16:05:07.622+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-11-19T16:05:07.642+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-11-19T16:05:07.643+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-re (truncated)...]
+2024-11-19T16:05:07.649+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T16:05:07.672+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
+2024-11-19T16:05:07.673+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T16:05:07.673+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
+2024-11-19T16:05:07.673+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-11-19T16:05:07.674+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-11-19T16:05:08.245+02:00  INFO 12368 --- [BuzzByte] [http-nio-8080-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 554 ms
+2024-11-19T16:05:08.271+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-11-19T16:05:08.275+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-11-19T16:05:08.276+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T16:05:28.515+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /buzzbyte/auth/reset-password
+2024-11-19T16:05:28.516+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T16:05:28.516+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /buzzbyte/auth/reset-password
+2024-11-19T16:05:28.516+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/buzzbyte/auth/reset-password", parameters={}
+2024-11-19T16:05:28.516+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#resetPasswordRequest(String)
+2024-11-19T16:05:28.520+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to ["ursuandreea2119@gmail.com"]
+2024-11-19T16:05:28.751+02:00  WARN 12368 --- [BuzzByte] [http-nio-8080-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2024-11-19T16:05:28.751+02:00 ERROR 12368 --- [BuzzByte] [http-nio-8080-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "ukdsueu4oggfo11n7trivi7vvyt"
+  Detail: Key (user_id)=(4) already exists.
+2024-11-19T16:05:28.770+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.BuzzByte.login_system.utils.exception.ExceptionHandlerAdvice#handleOtherException(Exception)
+2024-11-19T16:05:28.771+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T16:05:28.775+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=false, code=500, message=could not execute statement [ERROR: duplicate key value violate (truncated)...]
+2024-11-19T16:05:28.776+02:00  WARN 12368 --- [BuzzByte] [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "ukdsueu4oggfo11n7trivi7vvyt"<EOL>  Detail: Key (user_id)=(4) already exists.] [insert into user_token (expires,token,user_id) values (?,?,?) returning id]; SQL [insert into user_token (expires,token,user_id) values (?,?,?) returning id]; constraint [ukdsueu4oggfo11n7trivi7vvyt]]
+2024-11-19T16:05:28.778+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-11-19T16:05:30.776+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /buzzbyte/auth/reset-password
+2024-11-19T16:05:30.776+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T16:05:30.778+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /buzzbyte/auth/reset-password
+2024-11-19T16:05:30.778+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/buzzbyte/auth/reset-password", parameters={}
+2024-11-19T16:05:30.778+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#resetPasswordRequest(String)
+2024-11-19T16:05:30.779+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to ["ursuandreea2119@gmail.com"]
+2024-11-19T16:05:30.789+02:00  WARN 12368 --- [BuzzByte] [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2024-11-19T16:05:30.789+02:00 ERROR 12368 --- [BuzzByte] [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "ukdsueu4oggfo11n7trivi7vvyt"
+  Detail: Key (user_id)=(4) already exists.
+2024-11-19T16:05:30.790+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.BuzzByte.login_system.utils.exception.ExceptionHandlerAdvice#handleOtherException(Exception)
+2024-11-19T16:05:30.791+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T16:05:30.791+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=false, code=500, message=could not execute statement [ERROR: duplicate key value violate (truncated)...]
+2024-11-19T16:05:30.792+02:00  WARN 12368 --- [BuzzByte] [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "ukdsueu4oggfo11n7trivi7vvyt"<EOL>  Detail: Key (user_id)=(4) already exists.] [insert into user_token (expires,token,user_id) values (?,?,?) returning id]; SQL [insert into user_token (expires,token,user_id) values (?,?,?) returning id]; constraint [ukdsueu4oggfo11n7trivi7vvyt]]
+2024-11-19T16:05:30.792+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2024-11-19T16:06:25.330+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing PUT /buzzbyte/auth/reset-password
+2024-11-19T16:06:25.330+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T16:06:25.331+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured PUT /buzzbyte/auth/reset-password
+2024-11-19T16:06:25.331+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : PUT "/buzzbyte/auth/reset-password", parameters={}
+2024-11-19T16:06:25.331+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#resetPassword(PasswordResetDto)
+2024-11-19T16:06:25.349+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [PasswordResetDto[token=ucu-3B-JT9E0Dn_6y16XeoEkqVxhMm8l, password=ursu19]]
+2024-11-19T16:06:25.668+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T16:06:25.669+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=true, code=200, message=Password reset successfully, data=null)]
+2024-11-19T16:06:25.670+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T16:10:43.601+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /buzzbyte/auth/register
+2024-11-19T16:10:43.602+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T16:10:43.602+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /buzzbyte/auth/register
+2024-11-19T16:10:43.603+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/buzzbyte/auth/register", parameters={}
+2024-11-19T16:10:43.603+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#register(RegistrationUserDto)
+2024-11-19T16:10:43.609+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegistrationUserDto(username=krysx, password=abc123, email=ursualisa2004@gmail.com, role=BASIC)]
+2024-11-19T16:10:43.792+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T16:10:43.792+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=true, code=201, message=User created successfully, data=null)]
+2024-11-19T16:10:43.793+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T16:11:05.246+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing PUT /buzzbyte/auth/enable/jIlfIAlSL8Ik1fm2MgRBO0b4Aez96fS9
+2024-11-19T16:11:05.246+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T16:11:05.247+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured PUT /buzzbyte/auth/enable/jIlfIAlSL8Ik1fm2MgRBO0b4Aez96fS9
+2024-11-19T16:11:05.247+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : PUT "/buzzbyte/auth/enable/jIlfIAlSL8Ik1fm2MgRBO0b4Aez96fS9", parameters={}
+2024-11-19T16:11:05.247+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#enableUser(String)
+2024-11-19T16:11:05.272+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T16:11:05.272+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=true, code=200, message=User enabled successfully., data=null)]
+2024-11-19T16:11:05.273+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T16:11:26.117+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /buzzbyte/auth/login
+2024-11-19T16:11:26.117+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-11-19T16:11:26.117+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /buzzbyte/auth/login
+2024-11-19T16:11:26.118+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/buzzbyte/auth/login", parameters={}
+2024-11-19T16:11:26.118+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.AuthController#login(LoginRequest)
+2024-11-19T16:11:26.121+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest[username=krysx, password=abc123]]
+2024-11-19T16:11:26.363+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-11-19T16:11:26.455+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T16:11:26.455+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=true, code=200, message=Login successful., data=eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiw (truncated)...]
+2024-11-19T16:11:26.456+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-19T16:11:44.906+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /buzzbyte/users
+2024-11-19T16:11:44.920+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] o.s.s.o.s.r.a.JwtAuthenticationProvider  : Authenticated token
+2024-11-19T16:11:44.922+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] .s.r.w.a.BearerTokenAuthenticationFilter : Set SecurityContextHolder to JwtAuthenticationToken [Principal=org.springframework.security.oauth2.jwt.Jwt@83c1692, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[SCOPE_BASIC]]
+2024-11-19T16:11:44.923+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /buzzbyte/users
+2024-11-19T16:11:44.923+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/buzzbyte/users", parameters={}
+2024-11-19T16:11:44.923+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.BuzzByte.controller.UserController#getUser()
+2024-11-19T16:11:44.925+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] horizationManagerBeforeMethodInterceptor : Authorizing method invocation ReflectiveMethodInvocation: public com.example.BuzzByte.utils.Result com.example.BuzzByte.controller.UserController.getUser(); target is of class [com.example.BuzzByte.controller.UserController]
+2024-11-19T16:11:44.937+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] horizationManagerBeforeMethodInterceptor : Failed to authorize ReflectiveMethodInvocation: public com.example.BuzzByte.utils.Result com.example.BuzzByte.controller.UserController.getUser(); target is of class [com.example.BuzzByte.controller.UserController] with authorization manager org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager@446872bf and decision ExpressionAuthorizationDecision [granted=false, expressionAttribute=hasAnyAuthority('SCOPE_ADMIN', 'SCOPE_ARHEO', 'SCOPE_LABWORKER', 'SCOPE_GUEST')]
+2024-11-19T16:11:44.938+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.BuzzByte.login_system.utils.exception.ExceptionHandlerAdvice#handleAccessDeniedException(AccessDeniedException)
+2024-11-19T16:11:44.938+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/hal+json', given [application/hal+json] and supported [application/json, application/*+json]
+2024-11-19T16:11:44.938+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [Result(flag=false, code=403, message=No permission., data=Access Denied)]
+2024-11-19T16:11:44.939+02:00  WARN 12368 --- [BuzzByte] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authorization.AuthorizationDeniedException: Access Denied]
+2024-11-19T16:11:44.939+02:00 DEBUG 12368 --- [BuzzByte] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 403 FORBIDDEN

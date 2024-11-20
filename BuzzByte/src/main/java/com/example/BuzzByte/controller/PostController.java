@@ -21,6 +21,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import com.example.BuzzByte.service.PostService;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -49,10 +50,10 @@ public class PostController {
             @RequestParam(required = false) String postTitle,
             @RequestParam(required = false) String postContent,
             @RequestParam(required = false) String postAuthor,
-            @RequestParam(required = false) String postCategory
+            @RequestParam(required = false) List<String> postTags
     ) {
         Pageable pageable = PageRequest.of(pageNumber, pageSize);
-        Page<Post> posts = postService.findAllByCriteria(postId, postTitle, postContent, postAuthor, postCategory, pageable);
+        Page<Post> posts = postService.findAllByCriteria(postId, postTitle, postContent, postAuthor, postTags, pageable);
         Map<String, Object> response = HelperMethods.makeResponse(posts, postDtoConverter);
         return new Result<>(true, HttpStatus.OK.value(), "Retrieved all posts based on given params", response);
     }
@@ -61,7 +62,10 @@ public class PostController {
     @PostMapping
     public Result<PostDto> addPost(@RequestBody AddPostDto addPostDto) {
         // get user from SecurityContextHolder
-        var user = userService.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        //var user = userService.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+
+        // since the authentication is done only in FE we should hard code a user that does the adding of posts
+        var user = userService.getUserById(100);
         Post post = postDtoConverter.createFromAddPostDto(addPostDto);
         post.setUser(user);
         postService.addPost(post);

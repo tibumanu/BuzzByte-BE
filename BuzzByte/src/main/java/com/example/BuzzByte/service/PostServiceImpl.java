@@ -4,6 +4,7 @@ import com.example.BuzzByte.model.Post;
 import com.example.BuzzByte.repository.PostRepository;
 import com.example.BuzzByte.utils.validation.GenericValidator;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.persistence.criteria.Join;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -119,7 +120,7 @@ public class PostServiceImpl implements PostService{
 
     @Override
     @Transactional
-    public Page<Post> findAllByCriteria(Long postId, String postTitle, String postContent, String postAuthor, String postCategory, Pageable pageable) {
+    public Page<Post> findAllByCriteria(Long postId, String postTitle, String postContent, String postAuthor, List<String> postTags, Pageable pageable) {
         // use specification and criteria builder
         Specification<Post> specification = (root, query, criteriaBuilder) -> {
             // predicates for partial search
@@ -136,8 +137,10 @@ public class PostServiceImpl implements PostService{
             if (postAuthor != null) {
                 predicates.add(criteriaBuilder.like(root.get("user").get("username"), "%" + postAuthor + "%"));
             }
-            if (postCategory != null) {
-                predicates.add(criteriaBuilder.like(root.get("tags").get("name"), "%" + postCategory + "%"));
+            if (postTags != null && !postTags.isEmpty()) {
+                // Use Join for tags and filter by names
+                Join<Object, Object> tagsJoin = root.join("tags");
+                predicates.add(tagsJoin.get("name").in(postTags));
             }
             if(predicates.isEmpty() || query == null) return null;
             query.where(predicates.toArray(new Predicate[0]));
@@ -151,7 +154,7 @@ public class PostServiceImpl implements PostService{
         return found;
     }
 
-    @Override
+   /* @Override
     @Transactional
     // deprecated; this was used to initialize tags and comments, now done in findAllByCriteria
     public Page<Post> findAllByCriteriaWrapper(Long postId, String postTitle, String postContent, String postAuthor, String postCategory, Pageable pageable) {
@@ -161,5 +164,5 @@ public class PostServiceImpl implements PostService{
             Hibernate.initialize(post.getComments());
         });
         return posts;
-    }
+    }*/
 }

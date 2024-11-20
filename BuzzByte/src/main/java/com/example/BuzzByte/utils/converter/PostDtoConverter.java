@@ -40,7 +40,11 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
                 entity.getTags().stream().map(new TagDtoConverter()::createFromEntity).collect(Collectors.toList()),
                 new UserDtoConverter().createFromEntity(entity.getUser()),
                 entity.getImage(),
-                entity.getComments().stream().map(new PostCommentDtoConverter()::createFromEntity).collect(Collectors.toList()),
+                entity.getComments() == null || entity.getComments().isEmpty()
+                        ? null
+                        : entity.getComments().stream()
+                        .map(new PostCommentDtoConverter()::createFromEntity)
+                        .collect(Collectors.toList()),
                 entity.getLikes(),
                 entity.getCreatedAt());
     }

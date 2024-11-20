@@ -62,6 +62,20 @@ public class PostController {
     @PostMapping
     public Result<PostDto> addPost(@RequestBody AddPostDto addPostDto) {
         // get user from SecurityContextHolder
+        var user = userService.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+
+        // since the authentication is done only in FE we should hard code a user that does the adding of posts
+        //var user = userService.getUserById(100);
+        Post post = postDtoConverter.createFromAddPostDto(addPostDto);
+        post.setUser(user);
+        postService.addPost(post);
+        PostDto postDto = postDtoConverter.createFromEntity(post);
+        return new Result<>(true, HttpStatus.OK.value(), "Post added successfully", postDto);
+    }
+
+    @PostMapping("/demo")
+    public Result<PostDto> addPost_Demo(@RequestBody AddPostDto addPostDto) {
+        // get user from SecurityContextHolder
         //var user = userService.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
 
         // since the authentication is done only in FE we should hard code a user that does the adding of posts

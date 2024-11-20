@@ -45,7 +45,7 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
                         : entity.getComments().stream()
                         .map(new PostCommentDtoConverter()::createFromEntity)
                         .collect(Collectors.toList()),
-                entity.getLikes(),
+                entity.getLikes() == null ? 0 : entity.getLikes(),
                 entity.getCreatedAt());
     }
 

@@ -51,16 +51,31 @@ public class PostServiceImpl implements PostService{
         var updatedPost = postRepository.findById(post.getId()).orElseThrow(
                 () -> new EntityNotFoundException(String.format("Post with id %d not found", post.getId()))
         );
-
         updatedPost.setTitle(post.getTitle());
         updatedPost.setDescription(post.getDescription());
         updatedPost.setContent(post.getContent());
-        updatedPost.getTags().clear();
-        updatedPost.getTags().addAll(post.getTags());
+
+        // check if tags is null
+        if (updatedPost.getTags() != null) {
+            updatedPost.getTags().clear();
+            updatedPost.getTags().addAll(post.getTags());
+        } else {
+            updatedPost.setTags(post.getTags());
+        }
+
         updatedPost.setUser(post.getUser());
         updatedPost.setImage(post.getImage());
-        updatedPost.getComments().clear();
-        updatedPost.getComments().addAll(post.getComments());
+
+        // check if comments is null
+        if (updatedPost.getComments() != null) {
+            updatedPost.getComments().clear();
+            if (post.getComments() != null) {
+                updatedPost.getComments().addAll(post.getComments());
+            }
+        } else {
+            updatedPost.setComments(post.getComments() != null ? post.getComments() : new ArrayList<>());
+        }
+
         updatedPost.setLikes(post.getLikes());
         updatedPost.setCreatedAt(post.getCreatedAt());
         try{

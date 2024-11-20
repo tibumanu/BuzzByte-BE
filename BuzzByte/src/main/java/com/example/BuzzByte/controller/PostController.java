@@ -86,4 +86,36 @@ public class PostController {
         PostDto postDto = postDtoConverter.createFromEntity(post);
         return new Result<>(true, HttpStatus.OK.value(), "Post added successfully", postDto);
     }
+
+    //delete post
+    @DeleteMapping("/{postId}")
+    public Result<Post> deletePost(@PathVariable Long postId) {
+        postService.deletePost(postId);
+        return new Result<>(true, HttpStatus.OK.value(), "Post deleted successfully", null);
+    }
+
+    //update post
+    @PutMapping("/{postId}")
+    public Result<PostDto> updatePost(@PathVariable Long postId, @RequestBody AddPostDto addPostDto) {
+        var user = userService.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        Post post = postDtoConverter.createFromAddPostDto(addPostDto);
+        post.setUser(user);
+        post.setId(postId);
+        postService.updatePost(post);
+        PostDto postDto = postDtoConverter.createFromEntity(post);
+        return new Result<>(true, HttpStatus.OK.value(), "Post updated successfully", postDto);
+    }
+
+    //update post
+    @PutMapping("/demo/{postId}")
+    public Result<PostDto> updatePost_Demo(@PathVariable Long postId, @RequestBody AddPostDto addPostDto) {
+        //var user = userService.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        Post post = postDtoConverter.createFromAddPostDto(addPostDto);
+        var user = userService.getUserById(100);
+        post.setUser(user);
+        post.setId(postId);
+        postService.updatePost(post);
+        PostDto postDto = postDtoConverter.createFromEntity(post);
+        return new Result<>(true, HttpStatus.OK.value(), "Post updated successfully", postDto);
+    }
 }

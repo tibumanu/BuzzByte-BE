@@ -193,6 +193,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 				"I can't believe such companies exist. Amazon is the best. AWS is the best. Jeff Bezos is the best.\n" +
 				"Also, he's not bald. He's just aerodynamic. He's not bald. He's just aerodynamic. He's not bald. He's just aerodynamic. ");
 		post.setUser(user);
+		post.setLikes(-8L);
 
 		tag1 = tagRepository.findByName("Java").get();
 		Tag tag2 = tagRepository.findByName("Docker").get();
@@ -241,6 +242,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 				"the AI feature being added to windows is so cool. it's so smart. it's so intelligent. it's so intuitive. it's so helpful. \n" +
 				"it's also so secure and private. yeah sure it's installed a keylogger on your system but it's for your own good.");
 		post.setUser(user);
+		post.setLikes(17L);
 
 		tag1 = tagRepository.findByName("Azure").get();
 		tag2 = tagRepository.findByName("Business Intelligence").get();
@@ -289,6 +291,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 				"even before you know you need it! Who cares about privacy when you can have convenience? " +
 				"After all, if you have nothing to hide, what's the problem?");
 		post.setUser(user);
+		post.setLikes(3L);
 
 		tag1 = tagRepository.findByName("Machine Learning").get();
 		tag2 = tagRepository.findByName("Data Science").get();
@@ -347,6 +350,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		post.setContent("Apple doesn't rush into new features like the other companies. We wait, observe, and then perfect. " +
 				"Why introduce a feature early when you can wait and make it 'magical' later? Our users love it because it just works, eventually.");
 		post.setUser(user);
+		post.setLikes(23L);
 
 		tag1 = tagRepository.findByName("Business Intelligence").get();
 		post.setTags(new ArrayList<>(List.of(tag1)));
@@ -405,6 +409,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		post.setContent("Imagine a world where Amazon drones deliver everything. Groceries, gadgets, and even your kids to school! " +
 				"Think about the efficiency, the speed, the convenience. Why drive when a drone can just drop your kid off at the schoolyard?");
 		post.setUser(user);
+		post.setLikes(2L);
 
 		tag1 = tagRepository.findByName("Business Intelligence").get();
 		post.setTags(new ArrayList<>(List.of(tag1)));

@@ -19,6 +19,7 @@ public abstract class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
     protected Long userId;
+    @Column(length = 1000)
     protected String content;
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)

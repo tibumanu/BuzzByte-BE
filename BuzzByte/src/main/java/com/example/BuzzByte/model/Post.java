@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import com.example.BuzzByte.model.comments.PostComment;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.validator.constraints.Length;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class Post {
     private Long id;
     private String title;
     private String description;
+    @Column(length = 5000)
     private String content;
     @ManyToMany
     @JoinTable(

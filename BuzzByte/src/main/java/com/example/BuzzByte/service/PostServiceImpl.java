@@ -52,7 +52,6 @@ public class PostServiceImpl implements PostService{
                 () -> new EntityNotFoundException(String.format("Post with id %d not found", post.getId()))
         );
         updatedPost.setTitle(post.getTitle());
-        updatedPost.setDescription(post.getDescription());
         updatedPost.setContent(post.getContent());
 
         // check if tags is null

@@ -4,6 +4,10 @@ import com.example.BuzzByte.login_system.utils.dto.ChangePasswordDto;
 import com.example.BuzzByte.login_system.utils.dto.EnableUserDto;
 import com.example.BuzzByte.login_system.utils.exception.PasswordMissmatchException;
 import com.example.BuzzByte.login_system.utils.exception.UserServiceException;
+import com.example.BuzzByte.model.Tag;
+import com.example.BuzzByte.repository.TagRepository;
+import com.example.BuzzByte.utils.converter.TagDtoConverter;
+import com.example.BuzzByte.utils.dto.TagDto;
 import com.example.BuzzByte.utils.validation.GenericValidator;
 import com.example.BuzzByte.model.Role;
 import com.example.BuzzByte.model.User;
@@ -18,12 +22,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
+import java.util.stream.Collectors;
+
 @RequiredArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final GenericValidator<User> validator;
     private final PasswordEncoder passwordEncoder;
+    private final TagRepository tagRepository;
 
     @Override
     public User addUser(User user) {
@@ -37,10 +44,12 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User updateUser(User user) {
-        var updatedUser = this.userRepository.findByUsername(user.getUsername()).orElseThrow(
-                () -> new EntityNotFoundException(String.format("User with username %s, does not exist.", user.getUsername())
+        var updatedUser = this.userRepository.findById(user.getId()).orElseThrow(
+                () -> new EntityNotFoundException(String.format("User with id %d, does not exist.", user.getId())
                 ));
         updatedUser.setEmail(user.getEmail());
+        updatedUser.getTags().clear();
+        updatedUser.getTags().addAll(user.getTags());
         try {
             validator.validate(user);
             return this.userRepository.save(updatedUser);
@@ -100,5 +109,22 @@ public class UserServiceImpl implements UserService {
         var user = this.getUserByUsername(enableUserDto.username());
         user.setEnabled(enableUserDto.isEnabled());
         this.userRepository.save(user);
+    }
+
+    @Override
+    @Transactional
+    public User addTagsToUser(Long userId, List<String> newTags) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + userId));
+
+        var tags = newTags.stream()
+                .map(tagName ->
+                        tagRepository.findByName(tagName)
+                                .orElseThrow(() -> new EntityNotFoundException(String.format("Tag with name %s not found.", tagName)))
+                )
+                .toList();
+        user.getTags().clear();
+        user.getTags().addAll(tags);
+        return userRepository.save(user);
     }
 }

@@ -21,13 +21,12 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    private String description;
     @Column(length = 5000)
     private String content;
     @ManyToMany
     @JoinTable(
-            name = "news_tags",
-            joinColumns = @JoinColumn(name = "news_id"),
+            name = "posts_tags",
+            joinColumns = @JoinColumn(name = "post_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id"
             )
     )

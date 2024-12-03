@@ -68,8 +68,7 @@ public class PostController {
         //var user = userService.getUserById(100);
         Post post = postDtoConverter.createFromAddPostDto(addPostDto);
         post.setUser(user);
-        postService.addPost(post);
-        PostDto postDto = postDtoConverter.createFromEntity(post);
+        PostDto postDto = postDtoConverter.createFromEntity(postService.addPost(post));
         return new Result<>(true, HttpStatus.OK.value(), "Post added successfully", postDto);
     }
 
@@ -79,11 +78,10 @@ public class PostController {
         //var user = userService.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
 
         // since the authentication is done only in FE we should hard code a user that does the adding of posts
-        var user = userService.getUserById(100);
+        var user = userService.getUserById(1);
         Post post = postDtoConverter.createFromAddPostDto(addPostDto);
         post.setUser(user);
-        postService.addPost(post);
-        PostDto postDto = postDtoConverter.createFromEntity(post);
+        PostDto postDto = postDtoConverter.createFromEntity(postService.addPost(post));
         return new Result<>(true, HttpStatus.OK.value(), "Post added successfully", postDto);
     }
 
@@ -101,8 +99,7 @@ public class PostController {
         Post post = postDtoConverter.createFromAddPostDto(addPostDto);
         post.setUser(user);
         post.setId(postId);
-        postService.updatePost(post);
-        PostDto postDto = postDtoConverter.createFromEntity(post);
+        PostDto postDto = postDtoConverter.createFromEntity(postService.updatePost(post));
         return new Result<>(true, HttpStatus.OK.value(), "Post updated successfully", postDto);
     }
 
@@ -111,11 +108,10 @@ public class PostController {
     public Result<PostDto> updatePost_Demo(@PathVariable Long postId, @RequestBody AddPostDto addPostDto) {
         //var user = userService.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
         Post post = postDtoConverter.createFromAddPostDto(addPostDto);
-        var user = userService.getUserById(100);
+        var user = userService.getUserById(1);
         post.setUser(user);
         post.setId(postId);
-        postService.updatePost(post);
-        PostDto postDto = postDtoConverter.createFromEntity(post);
+        PostDto postDto = postDtoConverter.createFromEntity(postService.updatePost(post));
         return new Result<>(true, HttpStatus.OK.value(), "Post updated successfully", postDto);
     }
 }

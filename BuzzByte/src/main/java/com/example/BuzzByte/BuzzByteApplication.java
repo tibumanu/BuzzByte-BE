@@ -44,7 +44,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		//setup();
+		setup();
 		//demoOnCleanDb();
 	}
 

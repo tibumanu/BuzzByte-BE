@@ -30,7 +30,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("${api.endpoint.base-url}/users")
-//@SecurityRequirement(name = "bearerAuth")
+@SecurityRequirement(name = "bearerAuth")
 @Tag(name = "User Management")
 public class UserController {
     private final UserService userService;
@@ -56,7 +56,7 @@ public class UserController {
     //@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN', 'SCOPE_ARHEO', 'SCOPE_LABWORKER', 'SCOPE_GUEST')")
     public Result<?> changePassword(@RequestBody ChangePasswordDto changePasswordDto) {
         this.userService.changePassword(changePasswordDto);
-        return new Result<>(true, HttpStatus.OK.value(), "Password changed.");
+        return new Result<>(true, HttpStatus.OK.value(), "Password changed.", null);
     }
 
     @Operation(

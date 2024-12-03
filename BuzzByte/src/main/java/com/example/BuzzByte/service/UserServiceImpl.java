@@ -15,6 +15,7 @@ import com.example.BuzzByte.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.ConstraintViolationException;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.Hibernate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -74,19 +76,31 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public User getUserByUsername(String username) {
-        return this.userRepository
+        /*var user = this.userRepository
                 .findByUsername(username)
                 .orElseThrow(()->new EntityNotFoundException(String.format("User with username: %s, not found", username)));
+        Hibernate.initialize(user.getTags());
+        return user;*/
+        Optional<User> user = this.userRepository.findByUsername(username);
+        if (user.isEmpty()) {
+            throw new EntityNotFoundException(String.format("User with username: %s, not found", username));
+        }
+        Hibernate.initialize(user.get().getTags());
+        return user.get();
+
     }
 
     @Override
+    @Transactional
     public User getUserById(long id) {
-        return this.userRepository
-                .findById(id)
-                .orElseThrow(
-                        ()->new EntityNotFoundException(String.format("User with id: %d, not found", id))
-                );
+        Optional<User> user = this.userRepository.findById(id);
+        if (user.isEmpty()) {
+            throw new EntityNotFoundException(String.format("User with id: %d, not found", id));
+        }
+        Hibernate.initialize(user.get().getTags());
+        return user.get();
     }
 
     @Override

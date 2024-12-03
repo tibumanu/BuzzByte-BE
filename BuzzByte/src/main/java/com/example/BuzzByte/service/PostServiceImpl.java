@@ -16,6 +16,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -35,7 +36,10 @@ public class PostServiceImpl implements PostService{
             }
             // if createdAt is not set, set it to current time
             if (post.getCreatedAt() == null) {
-                post.setCreatedAt(Instant.ofEpochSecond(System.currentTimeMillis()));
+                post.setCreatedAt(LocalDateTime.now());
+            }
+            if (post.getUpdatedAt() == null) {
+                post.setUpdatedAt(LocalDateTime.now());
             }
             // validate
             postValidator.validate(post);
@@ -54,29 +58,22 @@ public class PostServiceImpl implements PostService{
         updatedPost.setTitle(post.getTitle());
         updatedPost.setContent(post.getContent());
 
-        // check if tags is null
         if (updatedPost.getTags() != null) {
             updatedPost.getTags().clear();
             updatedPost.getTags().addAll(post.getTags());
         } else {
             updatedPost.setTags(post.getTags());
         }
-
         updatedPost.setUser(post.getUser());
         updatedPost.setImage(post.getImage());
 
-        // check if comments is null
-        if (updatedPost.getComments() != null) {
-            updatedPost.getComments().clear();
-            if (post.getComments() != null) {
-                updatedPost.getComments().addAll(post.getComments());
-            }
-        } else {
-            updatedPost.setComments(post.getComments() != null ? post.getComments() : new ArrayList<>());
+        if (updatedPost.getComments() == null) {
+            updatedPost.setComments(new ArrayList<>());
         }
+        updatedPost.setUpdatedAt(LocalDateTime.now());
 
         updatedPost.setLikes(post.getLikes());
-        updatedPost.setCreatedAt(post.getCreatedAt());
+        Hibernate.initialize(updatedPost.getComments());
         try{
             postValidator.validate(updatedPost);
             return postRepository.save(updatedPost);
@@ -164,6 +161,7 @@ public class PostServiceImpl implements PostService{
         found.forEach(post -> {
             Hibernate.initialize(post.getTags());
             Hibernate.initialize(post.getComments());
+            Hibernate.initialize(post.getUser().getTags());
         });
         return found;
     }

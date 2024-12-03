@@ -103,12 +103,13 @@ public class SecurityConfig {
                                         this.baseUrl+"/auth/enable/**",
                                         this.baseUrl+"/auth/login",
                                         "/swagger-ui/**",
-                                        "auth/**",
+                                        this.baseUrl+"/auth/**",
+
                                         "/v3/api-docs/**" // Allow Swagger UI and OpenAPI docs
                                         //,"/api/**" // Allow other API endpoints
                                 ).permitAll()
-                                //.anyRequest().authenticated()
-                                .anyRequest().permitAll() // Allow all other requests (disable security entirely for testing)
+                                .anyRequest().authenticated()
+                                //.anyRequest().permitAll() // Allow all other requests (disable security entirely for testing)
                 )
                 .headers(headers -> headers.frameOptions(Customizer.withDefaults()).disable())
                 .csrf(AbstractHttpConfigurer::disable)

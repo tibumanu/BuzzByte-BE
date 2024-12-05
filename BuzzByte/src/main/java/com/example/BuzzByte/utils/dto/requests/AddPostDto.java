@@ -4,7 +4,6 @@ import java.util.List;
 
 public record AddPostDto(
         String title,
-        String description,
         String content,
         List<String> tags,
         String image

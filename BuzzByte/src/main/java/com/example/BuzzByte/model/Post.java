@@ -4,9 +4,11 @@ import jakarta.persistence.*;
 import lombok.*;
 import com.example.BuzzByte.model.comments.PostComment;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.Length;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,13 +23,12 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    private String description;
     @Column(length = 5000)
     private String content;
     @ManyToMany
     @JoinTable(
-            name = "news_tags",
-            joinColumns = @JoinColumn(name = "news_id"),
+            name = "posts_tags",
+            joinColumns = @JoinColumn(name = "post_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id"
             )
     )
@@ -40,6 +41,10 @@ public class Post {
     private List<PostComment> comments;
     private Long likes = 0L;
     @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private Instant createdAt;
+    @Column(nullable = false, name = "created_at", updatable = false) // prevent updates to this field after creation
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(nullable = true, name = "updated_at")
+    private LocalDateTime updatedAt;
 }

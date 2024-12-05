@@ -45,7 +45,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		setup();
-		// demoOnCleanDb();
+		//demoOnCleanDb();
 	}
 
 	public void addTagsInDB(){
@@ -105,6 +105,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 	public void setup(){
 		addTagsInDB();
+		demoOnCleanDb();
 	}
 
 	public void demoOnCleanDb() {
@@ -126,7 +127,6 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 		Post post = new Post();
 		post.setTitle("Need help with Java rendering");
-		post.setDescription("Cube rendering in Java given coordinates");
 		post.setContent("Essentially, we have blocks that we want to render in 3D. We have the coordinates of the blocks and we want to render them in 3D. " +
 				"We are using Java for this project. This is my rendering approach so far: I shoot rays out of my eyes like I'm Superman. Blah. Blah java something blah Blah. " +
 				"Blah blah blah, blah blah blah. It doesn't work and the cubes look mushed together. Blah. Blah java something blah Blah. Blah blah blah, blah blah blah. Blah. Blah java something blah Blah. " +
@@ -178,8 +178,8 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 		// Some other post
 		user = new User();
-		user.setUsername("jeff_da_basilisk");
-		user.setEmail("jeff@amazon.com");
+		user.setUsername("jeff_da_basilisk1");
+		user.setEmail("jeff1@amazon.com");
 		user.setHashedPassword("hashedPassword");
 		user.setRole(Role.BASIC);
 		user.setUniqueKey(UUID.randomUUID());
@@ -188,7 +188,6 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 		post = new Post();
 		post.setTitle("Why is AWS so good? I'm in love with it");
-		post.setDescription("AWS is really a blessing for all of humanity.");
 		post.setContent("I love AWS more than my wife. I love AWS more than my kids. I love AWS more than my dog. I love AWS more than my cat.\n" +
 				"I can't believe such companies exist. Amazon is the best. AWS is the best. Jeff Bezos is the best.\n" +
 				"Also, he's not bald. He's just aerodynamic. He's not bald. He's just aerodynamic. He's not bald. He's just aerodynamic. ");
@@ -235,7 +234,6 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 		post = new Post();
 		post.setTitle("Microsoft's overall brilliance - am I right?");
-		post.setDescription("Microsoft is so smart and Windows and Azure are the 8th and 9th wonders of the world.");
 		post.setContent("i can't believe it. the new windows update" +
 				"is phenomenal. it's the best thing since sliced bread. it's the best thing since the wheel. it's the best thing since the internet. \n" +
 				"i love how the new windows update is so user-friendly. it's so easy to use. it's so easy to install. it's so easy to uninstall. \n" +
@@ -286,7 +284,6 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 		post = new Post();
 		post.setTitle("Why Meta Should Monitor Your Every Move");
-		post.setDescription("Embracing the future of personalized ads.");
 		post.setContent("Let's face it, Meta knowing everything about you is a good thing. Imagine a world where every ad you see is exactly what you need, " +
 				"even before you know you need it! Who cares about privacy when you can have convenience? " +
 				"After all, if you have nothing to hide, what's the problem?");
@@ -346,7 +343,6 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 		post = new Post();
 		post.setTitle("Why Being Late to the Party is Apple's Secret Sauce");
-		post.setDescription("Apple's strategy of perfecting late features.");
 		post.setContent("Apple doesn't rush into new features like the other companies. We wait, observe, and then perfect. " +
 				"Why introduce a feature early when you can wait and make it 'magical' later? Our users love it because it just works, eventually.");
 		post.setUser(user);
@@ -394,8 +390,8 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 		// other post
 		user = new User();
-		user.setUsername("jeff_da_basilisk");
-		user.setEmail("jeff@amazon.com");
+		user.setUsername("jeff_da_basilisk2");
+		user.setEmail("jeff2@amazon.com");
 		user.setHashedPassword("hashedPassword");
 		user.setRole(Role.BASIC);
 		user.setUniqueKey(UUID.randomUUID());
@@ -405,7 +401,6 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 		post = new Post();
 		post.setTitle("Why Amazon Drones Should Deliver Everything, Even Your Kids");
-		post.setDescription("A futuristic take on Amazon's drone delivery system.");
 		post.setContent("Imagine a world where Amazon drones deliver everything. Groceries, gadgets, and even your kids to school! " +
 				"Think about the efficiency, the speed, the convenience. Why drive when a drone can just drop your kid off at the schoolyard?");
 		post.setUser(user);

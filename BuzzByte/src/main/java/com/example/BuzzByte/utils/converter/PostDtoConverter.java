@@ -7,6 +7,7 @@ import com.example.BuzzByte.repository.TagRepository;
 import com.example.BuzzByte.utils.dto.PostCommentDto;
 import com.example.BuzzByte.utils.dto.PostDto;
 import com.example.BuzzByte.utils.dto.requests.AddPostDto;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -24,7 +25,7 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
         return Post.builder()
                 .id(dto.id())
                 .content(dto.content())
-                .user(new UserDtoConverter().createFromDto(dto.userDto()))
+                .user(new UserDtoConverter(tagRepository).createFromDto(dto.userDto()))
                 .tags(dto.tags().stream().map(new TagDtoConverter()::createFromDto).collect(Collectors.toList()))
                 .comments(dto.comments().stream().map(new PostCommentDtoConverter()::createFromDto).collect(Collectors.toList()))
                 .build();
@@ -35,10 +36,9 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
 
         return new PostDto(entity.getId(),
                 entity.getTitle(),
-                entity.getDescription(),
                 entity.getContent(),
                 entity.getTags().stream().map(new TagDtoConverter()::createFromEntity).collect(Collectors.toList()),
-                new UserDtoConverter().createFromEntity(entity.getUser()),
+                new UserDtoConverter(tagRepository).createFromEntity(entity.getUser()),
                 entity.getImage(),
                 entity.getComments() == null || entity.getComments().isEmpty()
                         ? null
@@ -46,7 +46,8 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
                         .map(new PostCommentDtoConverter()::createFromEntity)
                         .collect(Collectors.toList()),
                 entity.getLikes() == null ? 0 : entity.getLikes(),
-                entity.getCreatedAt());
+                entity.getCreatedAt(),
+                entity.getUpdatedAt());
     }
 
     public Post createFromAddPostDto(AddPostDto addPostDto) {
@@ -54,15 +55,15 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
         var tags = addPostDto.tags().stream()
                 .map(tagName ->
                         tagRepository.findByName(tagName)
-                                .orElseGet(() -> tagRepository.save(new Tag(tagName)))
+                                .orElseThrow(() -> new EntityNotFoundException(String.format("Tag with name %s not found.", tagName)))
                 )
                 .toList();
 
         return Post.builder()
                 .title(addPostDto.title())
-                .description(addPostDto.description())
                 .content(addPostDto.content())
                 .tags(tags)
+                .likes(0L)
                 .image(addPostDto.image())
                 .build();
     }

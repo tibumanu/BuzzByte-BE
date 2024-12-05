@@ -1,6 +1,7 @@
 package com.example.BuzzByte.security.registration;
 
 import com.example.BuzzByte.login_system.utils.email.EmailService;
+import com.example.BuzzByte.model.Role;
 import com.example.BuzzByte.model.User;
 import com.example.BuzzByte.repository.UserRepository;
 import com.example.BuzzByte.security.token.TokenService;
@@ -33,7 +34,7 @@ public class RegistrationServiceImpl implements RegistrationService {
                 .hashedPassword(passwordEncoder.encode(user.getHashedPassword()))
                 .email(user.getEmail())
                 .uniqueKey(user.getUniqueKey())
-                .role(user.getRole())
+                .role(Role.BASIC)
                 .build());
         this.userRepository.save(newUser);
         var token = this.tokenService.createToken(newUser, 60);

@@ -18,7 +18,6 @@ public class RegistrationUserDtoConverter implements Converter<User, Registratio
                 .username(dto.getUsername())
                 .hashedPassword(dto.getPassword())
                 .email(dto.getEmail())
-                .role(dto.getRole())
                 .uniqueKey(UUID.randomUUID())
                 .build();
 

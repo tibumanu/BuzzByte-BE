@@ -16,11 +16,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import com.example.BuzzByte.service.PostService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -50,10 +52,12 @@ public class PostController {
             @RequestParam(required = false) String postTitle,
             @RequestParam(required = false) String postContent,
             @RequestParam(required = false) String postAuthor,
-            @RequestParam(required = false) List<String> postTags
+            @RequestParam(required = false) List<String> postTags,
+            @RequestParam(required = false) LocalDateTime startDate,
+            @RequestParam(required = false) LocalDateTime endDate
     ) {
-        Pageable pageable = PageRequest.of(pageNumber, pageSize);
-        Page<Post> posts = postService.findAllByCriteria(postId, postTitle, postContent, postAuthor, postTags, pageable);
+        Pageable pageable = PageRequest.of(pageNumber, pageSize, Sort.by(Sort.Order.desc("createdAt")));
+        Page<Post> posts = postService.findAllByCriteria(postId, postTitle, postContent, postAuthor, postTags, startDate, endDate, pageable);
         Map<String, Object> response = HelperMethods.makeResponse(posts, postDtoConverter);
         return new Result<>(true, HttpStatus.OK.value(), "Retrieved all posts based on given params", response);
     }

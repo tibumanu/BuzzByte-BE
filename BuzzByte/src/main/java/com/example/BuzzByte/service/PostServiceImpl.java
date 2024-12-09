@@ -131,7 +131,7 @@ public class PostServiceImpl implements PostService{
 
     @Override
     @Transactional
-    public Page<Post> findAllByCriteria(Long postId, String postTitle, String postContent, String postAuthor, List<String> postTags, Pageable pageable) {
+    public Page<Post> findAllByCriteria(Long postId, String postTitle, String postContent, String postAuthor, List<String> postTags, LocalDateTime startDate, LocalDateTime endDate, Pageable pageable) {
         // use specification and criteria builder
         Specification<Post> specification = (root, query, criteriaBuilder) -> {
             // predicates for partial search
@@ -152,6 +152,9 @@ public class PostServiceImpl implements PostService{
                 // Use Join for tags and filter by names
                 Join<Object, Object> tagsJoin = root.join("tags");
                 predicates.add(tagsJoin.get("name").in(postTags));
+            }
+            if (startDate != null && endDate != null) {
+                predicates.add(criteriaBuilder.between(root.get("createdAt"), startDate, endDate));
             }
             if(predicates.isEmpty() || query == null) return null;
             query.where(predicates.toArray(new Predicate[0]));

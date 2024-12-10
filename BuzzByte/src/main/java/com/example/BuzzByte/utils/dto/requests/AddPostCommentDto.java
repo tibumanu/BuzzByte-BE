@@ -1,14 +1,10 @@
-package com.example.BuzzByte.utils.dto;
+package com.example.BuzzByte.utils.dto.requests;
 
 import com.example.BuzzByte.login_system.utils.dto.UserDto;
 
-public record PostCommentDto(
-        Long id,
+public record AddPostCommentDto(
         String content,
-        //Long userId,
-        UserDto user,
         Long postId,
         String createdAt
 ) {
 }
-

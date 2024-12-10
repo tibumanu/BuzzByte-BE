@@ -4,6 +4,7 @@ import com.example.BuzzByte.login_system.utils.converter.UserDtoConverter;
 import com.example.BuzzByte.model.Post;
 import com.example.BuzzByte.model.Tag;
 import com.example.BuzzByte.repository.TagRepository;
+import com.example.BuzzByte.service.UserService;
 import com.example.BuzzByte.utils.dto.PostCommentDto;
 import com.example.BuzzByte.utils.dto.PostDto;
 import com.example.BuzzByte.utils.dto.requests.AddPostDto;
@@ -18,7 +19,9 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PostDtoConverter implements Converter<Post, PostDto>{
 
-     private final TagRepository tagRepository;
+    private final TagRepository tagRepository;
+    private final UserDtoConverter userDtoConverter;
+    private final UserService userService;
 
     @Override
     public Post createFromDto(PostDto dto) {
@@ -27,7 +30,7 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
                 .content(dto.content())
                 .user(new UserDtoConverter(tagRepository).createFromDto(dto.userDto()))
                 .tags(dto.tags().stream().map(new TagDtoConverter()::createFromDto).collect(Collectors.toList()))
-                .comments(dto.comments().stream().map(new PostCommentDtoConverter()::createFromDto).collect(Collectors.toList()))
+                .comments(dto.comments().stream().map(new PostCommentDtoConverter(userService, userDtoConverter)::createFromDto).collect(Collectors.toList()))
                 .build();
     }
 
@@ -43,7 +46,7 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
                 entity.getComments() == null || entity.getComments().isEmpty()
                         ? null
                         : entity.getComments().stream()
-                        .map(new PostCommentDtoConverter()::createFromEntity)
+                        .map(new PostCommentDtoConverter(userService, userDtoConverter)::createFromEntity)
                         .collect(Collectors.toList()),
                 entity.getLikes() == null ? 0 : entity.getLikes(),
                 entity.getCreatedAt(),

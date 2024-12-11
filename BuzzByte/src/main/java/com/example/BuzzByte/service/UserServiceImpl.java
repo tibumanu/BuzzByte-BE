@@ -5,8 +5,11 @@ import com.example.BuzzByte.login_system.utils.dto.EnableUserDto;
 import com.example.BuzzByte.login_system.utils.exception.PasswordMissmatchException;
 import com.example.BuzzByte.login_system.utils.exception.UserServiceException;
 import com.example.BuzzByte.model.Tag;
+import com.example.BuzzByte.repository.PostRepository;
 import com.example.BuzzByte.repository.TagRepository;
+import com.example.BuzzByte.utils.converter.PostDtoConverter;
 import com.example.BuzzByte.utils.converter.TagDtoConverter;
+import com.example.BuzzByte.utils.dto.PostDto;
 import com.example.BuzzByte.utils.dto.TagDto;
 import com.example.BuzzByte.utils.validation.GenericValidator;
 import com.example.BuzzByte.model.Role;
@@ -30,6 +33,8 @@ import java.util.stream.Collectors;
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final PostRepository postRepository;
+    //private final PostDtoConverter postDtoConverter;
     private final GenericValidator<User> validator;
     private final PasswordEncoder passwordEncoder;
     private final TagRepository tagRepository;
@@ -54,6 +59,8 @@ public class UserServiceImpl implements UserService {
         updatedUser.setProfilePicture(user.getProfilePicture());
         updatedUser.getTags().clear();
         updatedUser.getTags().addAll(user.getTags());
+        updatedUser.getBookmarks().clear();
+        updatedUser.getBookmarks().addAll(user.getBookmarks());
         try {
             validator.validate(user);
             return this.userRepository.save(updatedUser);
@@ -90,6 +97,7 @@ public class UserServiceImpl implements UserService {
             throw new EntityNotFoundException(String.format("User with username: %s, not found", username));
         }
         Hibernate.initialize(user.get().getTags());
+        Hibernate.initialize(user.get().getBookmarks());
         return user.get();
 
     }
@@ -102,6 +110,7 @@ public class UserServiceImpl implements UserService {
             throw new EntityNotFoundException(String.format("User with id: %d, not found", id));
         }
         Hibernate.initialize(user.get().getTags());
+        Hibernate.initialize(user.get().getBookmarks());
         return user.get();
     }
 
@@ -139,8 +148,63 @@ public class UserServiceImpl implements UserService {
                                 .orElseThrow(() -> new EntityNotFoundException(String.format("Tag with name %s not found.", tagName)))
                 )
                 .toList();
+        //Hibernate.initialize(user.getTags());
+        Hibernate.initialize(user.getBookmarks());
         user.getTags().clear();
         user.getTags().addAll(tags);
         return userRepository.save(user);
     }
+
+    @Override
+    @Transactional
+    public User addBookmarkToUser(Long userId, Long postId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + userId));
+        Hibernate.initialize(user.getBookmarks());
+        Hibernate.initialize(user.getTags());
+        // if not already bookmarked
+        if (user.getBookmarks().stream().noneMatch(postIdIterator -> postIdIterator.equals(postId))) {
+            user.getBookmarks().add(postId);
+        }
+        return userRepository.save(user);
+    }
+
+    @Override
+    @Transactional
+    public User removeBookmarkFromUser(Long userId, Long postId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + userId));
+        Hibernate.initialize(user.getBookmarks());
+        Hibernate.initialize(user.getTags());
+        // if already bookmarked
+        if (user.getBookmarks().stream().anyMatch(postIdIterator -> postIdIterator.equals(postId))) {
+            user.getBookmarks().remove(postId);
+        }
+        return userRepository.save(user);
+    }
+
+    @Override
+    @Transactional
+    public List<Long> getBookmarksIdsOfUser(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + userId));
+        Hibernate.initialize(user.getBookmarks());
+        return user.getBookmarks();
+    }
+
+
+    // The following is impossible since the PostDtoConverter is not available in this class - circular dependency
+    // since PostDtoConverter depends on UserService
+//    @Override
+//    @Transactional
+//    public List<PostDto> getBookmarksPostsDtosOfUser(Long userId) {
+//        User user = userRepository.findById(userId)
+//                .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + userId));
+//        Hibernate.initialize(user.getBookmarks());
+//        return user.getBookmarks().stream()
+//                // get post by id, use converter to convert to dto
+//                .map(postId -> postDtoConverter.createFromEntity(postRepository.findById(postId)
+//                        .orElseThrow(() -> new EntityNotFoundException("Post not found with ID: " + postId))))
+//                .collect(Collectors.toList());
+//    }
 }

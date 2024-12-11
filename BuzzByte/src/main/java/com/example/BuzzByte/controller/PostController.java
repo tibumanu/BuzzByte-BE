@@ -38,9 +38,10 @@ public class PostController {
 
 
     @GetMapping("/{postId}")
-    public Result<Post> getPost(@PathVariable Long postId) {
+    public Result<PostDto> getPost(@PathVariable Long postId) {
         Post post = postService.getPost(postId);
-        return new Result<>(true, HttpStatus.OK.value(), "Retrieved post based on given id", post);
+        PostDto postDto = postDtoConverter.createFromEntity(post);
+        return new Result<>(true, HttpStatus.OK.value(), "Retrieved post based on given id", postDto);
     }
 
     //TODO: authorization

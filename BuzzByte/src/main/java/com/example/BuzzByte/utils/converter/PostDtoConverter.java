@@ -2,15 +2,12 @@ package com.example.BuzzByte.utils.converter;
 
 import com.example.BuzzByte.login_system.utils.converter.UserDtoConverter;
 import com.example.BuzzByte.model.Post;
-import com.example.BuzzByte.model.Tag;
 import com.example.BuzzByte.repository.TagRepository;
-import com.example.BuzzByte.utils.dto.PostCommentDto;
 import com.example.BuzzByte.utils.dto.PostDto;
 import com.example.BuzzByte.utils.dto.requests.AddPostDto;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import java.util.stream.Collectors;
 
@@ -28,6 +25,7 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
                 .user(new UserDtoConverter(tagRepository).createFromDto(dto.userDto()))
                 .tags(dto.tags().stream().map(new TagDtoConverter()::createFromDto).collect(Collectors.toList()))
                 .comments(dto.comments().stream().map(new PostCommentDtoConverter()::createFromDto).collect(Collectors.toList()))
+                .image(dto.image())
                 .build();
     }
 

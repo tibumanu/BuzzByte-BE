@@ -6,7 +6,7 @@ public record AddPostDto(
         String title,
         String content,
         List<String> tags,
-        String image
+        byte[] image
         // , Long userId // should get user from the SecurityContextHolder
 ) {
 }

@@ -15,6 +15,7 @@ public class UserAdminDtoConverter implements Converter<User, UserAdminDto> {
                 .email(dto.email())
                 .isEnabled(dto.isEnabled())
                 .role(dto.role())
+                .profilePicture(dto.profilePicture())
                 .build();
     }
 
@@ -25,6 +26,7 @@ public class UserAdminDtoConverter implements Converter<User, UserAdminDto> {
                 entity.getUsername(),
                 entity.getEmail(),
                 entity.getRole(),
+                entity.getProfilePicture(),
                 entity.isEnabled());
     }
 }

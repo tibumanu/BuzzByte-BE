@@ -8,6 +8,6 @@ import java.util.List;
 public record ModifyUserDto (
         String username,
         String email,
-        List<String> tags
-        // todo: should this dto also have a profile picture field?
+        List<String> tags,
+        byte[] profilePicture
 ) {}

@@ -55,7 +55,7 @@ public class UserDtoConverter implements Converter<User, UserDto> {
                 .username(modifyUserDto.username())
                 .email(modifyUserDto.email())
                 .tags(tags)
-                // todo: should also add a profilePicture here? (I think not?)
+                .profilePicture(modifyUserDto.profilePicture())
                 .build();
     }
 }

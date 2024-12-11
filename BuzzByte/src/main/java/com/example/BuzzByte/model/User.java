@@ -49,7 +49,7 @@ public class User {
 
     public static byte[] loadDefaultProfilePicture() {
         try {
-            String defaultProfilePicturePath = "src/main/resources/images/default-profile-picture.png";
+            String defaultProfilePicturePath = "src/main/resources/images/default-pfp.jpg";
             return Files.readAllBytes(Paths.get(defaultProfilePicturePath));
         } catch (IOException e) {
             e.printStackTrace();

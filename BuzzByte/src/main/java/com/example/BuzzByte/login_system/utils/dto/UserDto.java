@@ -11,6 +11,7 @@ public record UserDto(
         String username,
         String email,
         Role role,
+        byte[] profilePicture,
         List<TagDto> tags
 ) {
 }

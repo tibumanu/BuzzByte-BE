@@ -8,5 +8,6 @@ import java.util.List;
 public record ModifyUserDto (
         String username,
         String email,
-        List<String> tags
+        List<String> tags,
+        byte[] profilePicture
 ) {}

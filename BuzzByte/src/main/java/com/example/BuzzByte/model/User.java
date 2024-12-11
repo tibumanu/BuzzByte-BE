@@ -7,6 +7,9 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -22,20 +25,45 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NotNull(message = "Username cannot be null")
     @NotEmpty(message = "Username cannot be empty")
     @NotBlank(message = "Username cannot be blank")
     @Column(unique = true)
     private String username;
+
     @Column(unique = true)
     private String email;
+
     private String hashedPassword;
-    private String avatarUrl;
+
     // discutabil
     @Column(unique = true)
     private UUID uniqueKey;
+
     private Role role;
     private boolean isEnabled;
+
+    @Lob
+    private byte[] profilePicture;  // null by default
+
+    public static byte[] loadDefaultProfilePicture() {
+        try {
+            String defaultProfilePicturePath = "src/main/resources/images/default-pfp.jpg";
+            return Files.readAllBytes(Paths.get(defaultProfilePicturePath));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @PrePersist
+    private void initializeToDefaultProfilePicture() {
+        if (this.profilePicture == null) {
+            this.profilePicture = User.loadDefaultProfilePicture();
+        }
+    }
+
     @ManyToMany
     @JoinTable(
             name = "user_tags",

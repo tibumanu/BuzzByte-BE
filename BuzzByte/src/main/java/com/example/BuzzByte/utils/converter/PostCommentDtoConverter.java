@@ -26,7 +26,6 @@ public class PostCommentDtoConverter implements Converter<PostComment, PostComme
     public PostComment createFromAddPostCommentDtoWithPost(AddPostCommentDto dto, Post post) {
         return PostComment.builder()
                 .content(dto.content())
-                .createdAt(dto.createdAt() != null ? Instant.parse(dto.createdAt()) : null)
                 .post(post).build();
     }
 

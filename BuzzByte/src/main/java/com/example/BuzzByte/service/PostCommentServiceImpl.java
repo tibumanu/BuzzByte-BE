@@ -7,6 +7,7 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import java.time.LocalDateTime;
@@ -29,6 +30,7 @@ public class PostCommentServiceImpl implements PostCommentService {
         }
     }
 
+    @Transactional
     public void deleteCommentIfAuthorized(Long commentId, Long userId) {
 
         PostComment comment = postCommentRepository.findById(commentId)
@@ -49,6 +51,7 @@ public class PostCommentServiceImpl implements PostCommentService {
 
 
     // Method to retrieve all comments for a specific post
+    @Transactional
     public List<PostComment> getCommentsByPost(Long postId) {
         try {
             return postCommentRepository.findPostCommentByPostId(postId);
@@ -77,6 +80,7 @@ public class PostCommentServiceImpl implements PostCommentService {
     }
 
     // Method to update an existing comment
+    @Transactional
     public PostComment updateCommentIfAuthorized(PostComment comment, Long userId) {
 
 
@@ -99,6 +103,7 @@ public class PostCommentServiceImpl implements PostCommentService {
     }
 
     // Method to get a specific comment
+    @Transactional
     public PostComment getComment(Long commentId) {
         return postCommentRepository.findById(commentId)
                 .orElseThrow(() -> new EntityNotFoundException("Comment not found"));

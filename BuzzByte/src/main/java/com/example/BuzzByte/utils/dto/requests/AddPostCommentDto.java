@@ -4,7 +4,6 @@ import com.example.BuzzByte.login_system.utils.dto.UserDto;
 
 public record AddPostCommentDto(
         String content,
-        Long postId,
-        String createdAt
+        Long postId
 ) {
 }

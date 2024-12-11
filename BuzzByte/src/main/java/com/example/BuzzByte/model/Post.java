@@ -5,9 +5,7 @@ import lombok.*;
 import com.example.BuzzByte.model.comments.PostComment;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.hibernate.validator.constraints.Length;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +39,6 @@ public class Post {
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
     private User user;
 
-//    private String image;  // todo: should be deleted?
-
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PostComment> comments;
 
@@ -56,7 +52,6 @@ public class Post {
     @Column(nullable = true, name = "updated_at")
     private LocalDateTime updatedAt;
 
-    // todo: should be renamed to just 'image'
     @Lob
-    private byte[] byteImage;  // null by default
+    private byte[] image;  // null by default
 }

@@ -22,9 +22,12 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String title;
+
     @Column(length = 5000)
     private String content;
+
     @ManyToMany
     @JoinTable(
             name = "posts_tags",
@@ -33,13 +36,18 @@ public class Post {
             )
     )
     private List<Tag> tags = new ArrayList<>();
+
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
     private User user;
-    private String image;
+
+//    private String image;  // todo: should be deleted?
+
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PostComment> comments;
+
     private Long likes = 0L;
+
     @CreationTimestamp
     @Column(nullable = false, name = "created_at", updatable = false) // prevent updates to this field after creation
     private LocalDateTime createdAt;
@@ -47,4 +55,8 @@ public class Post {
     @UpdateTimestamp
     @Column(nullable = true, name = "updated_at")
     private LocalDateTime updatedAt;
+
+    // todo: should be renamed to just 'image'
+    @Lob
+    private byte[] byteImage;  // null by default
 }

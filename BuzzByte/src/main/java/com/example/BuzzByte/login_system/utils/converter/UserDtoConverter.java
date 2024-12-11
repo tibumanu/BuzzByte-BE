@@ -26,6 +26,7 @@ public class UserDtoConverter implements Converter<User, UserDto> {
                 .username(dto.username())
                 .email(dto.email())
                 .role(dto.role())
+                .profilePicture(dto.profilePicture())
                 .tags(dto.tags().stream().map(new TagDtoConverter()::createFromDto).collect(Collectors.toList()))
                 .build();
     }
@@ -37,6 +38,7 @@ public class UserDtoConverter implements Converter<User, UserDto> {
                 entity.getUsername(),
                 entity.getEmail(),
                 entity.getRole(),
+                entity.getProfilePicture(),
                 entity.getTags().stream().map(new TagDtoConverter()::createFromEntity).collect(Collectors.toList())
         );
     }
@@ -53,6 +55,7 @@ public class UserDtoConverter implements Converter<User, UserDto> {
                 .username(modifyUserDto.username())
                 .email(modifyUserDto.email())
                 .tags(tags)
+                // todo: should also add a profilePicture here? (I think not?)
                 .build();
     }
 }

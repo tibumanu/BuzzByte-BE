@@ -22,20 +22,29 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NotNull(message = "Username cannot be null")
     @NotEmpty(message = "Username cannot be empty")
     @NotBlank(message = "Username cannot be blank")
     @Column(unique = true)
     private String username;
+
     @Column(unique = true)
     private String email;
+
     private String hashedPassword;
-    private String avatarUrl;
+//    private String avatarUrl;  // todo: should be deleted?
+
     // discutabil
     @Column(unique = true)
     private UUID uniqueKey;
+
     private Role role;
     private boolean isEnabled;
+
+    @Lob
+    private byte[] profilePicture;  // null by default
+
     @ManyToMany
     @JoinTable(
             name = "user_tags",

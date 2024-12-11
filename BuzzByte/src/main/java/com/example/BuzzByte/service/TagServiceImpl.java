@@ -4,6 +4,7 @@ import com.example.BuzzByte.model.Tag;
 import com.example.BuzzByte.repository.TagRepository;
 import com.example.BuzzByte.utils.validation.GenericValidator;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.persistence.criteria.Predicate;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -15,7 +16,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Predicate;
 
 @RequiredArgsConstructor
 @Service

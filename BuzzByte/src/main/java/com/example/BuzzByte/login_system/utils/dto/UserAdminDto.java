@@ -8,6 +8,7 @@ public record UserAdminDto(
         String username,
         String email,
         Role role,
+        byte[] profilePicture,  // todo: this should have a pfp too, no?
         boolean isEnabled
 ) {
 }

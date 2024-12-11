@@ -65,7 +65,7 @@ public class PostServiceImpl implements PostService{
             updatedPost.setTags(post.getTags());
         }
         updatedPost.setUser(post.getUser());
-        updatedPost.setImage(post.getImage());
+        updatedPost.setByteImage(post.getByteImage());
 
         if (updatedPost.getComments() == null) {
             updatedPost.setComments(new ArrayList<>());

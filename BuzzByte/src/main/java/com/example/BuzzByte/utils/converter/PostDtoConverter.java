@@ -28,6 +28,7 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
                 .user(new UserDtoConverter(tagRepository).createFromDto(dto.userDto()))
                 .tags(dto.tags().stream().map(new TagDtoConverter()::createFromDto).collect(Collectors.toList()))
                 .comments(dto.comments().stream().map(new PostCommentDtoConverter()::createFromDto).collect(Collectors.toList()))
+                .byteImage(dto.byteImage())
                 .build();
     }
 
@@ -39,7 +40,7 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
                 entity.getContent(),
                 entity.getTags().stream().map(new TagDtoConverter()::createFromEntity).collect(Collectors.toList()),
                 new UserDtoConverter(tagRepository).createFromEntity(entity.getUser()),
-                entity.getImage(),
+                entity.getByteImage(),
                 entity.getComments() == null || entity.getComments().isEmpty()
                         ? null
                         : entity.getComments().stream()
@@ -64,7 +65,7 @@ public class PostDtoConverter implements Converter<Post, PostDto>{
                 .content(addPostDto.content())
                 .tags(tags)
                 .likes(0L)
-                .image(addPostDto.image())
+                .byteImage(addPostDto.byteImage())
                 .build();
     }
 }

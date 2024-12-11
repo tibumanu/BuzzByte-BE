@@ -1,12 +1,15 @@
 package com.example.BuzzByte.controller;
 
 import com.example.BuzzByte.login_system.utils.converter.RegistrationUserDtoConverter;
+import com.example.BuzzByte.login_system.utils.converter.UserDtoConverter;
 import com.example.BuzzByte.login_system.utils.dto.LoginRequest;
 import com.example.BuzzByte.login_system.utils.dto.PasswordResetDto;
 import com.example.BuzzByte.login_system.utils.dto.RegistrationUserDto;
+import com.example.BuzzByte.login_system.utils.dto.UserDto;
 import com.example.BuzzByte.security.auth.AuthenticationService;
 import com.example.BuzzByte.security.recovery.RecoveryService;
 import com.example.BuzzByte.security.registration.RegistrationService;
+import com.example.BuzzByte.service.UserService;
 import com.example.BuzzByte.utils.Result;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -16,6 +19,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -27,7 +31,8 @@ public class AuthController {
     private final RegistrationUserDtoConverter registrationUserDtoConverter;
     private final RegistrationService registrationService;
     private final RecoveryService recoveryService;
-
+    private final UserService userService;
+    private final UserDtoConverter userDtoConverter;
     @Operation(
             description = "Login endpoint.",
             summary = "Login endpoint. Generates the JWT needed for further operations."
@@ -92,6 +97,14 @@ public class AuthController {
     public Result<?> resetPassword(@RequestBody PasswordResetDto passwordResetDto) {
         this.recoveryService.resetPassword(passwordResetDto);
         return new Result<>(true, HttpStatus.OK.value(), "Password reset successfully", null);
+    }
+
+    @PostMapping("/{username}/tags")
+    public Result<UserDto> addTagsToUser(@PathVariable String username, @RequestBody List<String> tags) {
+        var user = userService.getUserByUsername(username);
+        var updatedUser = userService.addTagsToUser(user.getId(), tags);
+        UserDto updatedUserDto = userDtoConverter.createFromEntity(updatedUser);
+        return new Result<>(true, HttpStatus.OK.value(), "Tags added successfully.", updatedUserDto);
     }
 
 }

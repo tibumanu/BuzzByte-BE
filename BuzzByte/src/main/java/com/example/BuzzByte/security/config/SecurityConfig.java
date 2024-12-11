@@ -104,7 +104,7 @@ public class SecurityConfig {
                                         this.baseUrl+"/auth/login",
                                         "/swagger-ui/**",
                                         this.baseUrl+"/auth/**",
-
+                                        "/api/tags",
                                         "/v3/api-docs/**" // Allow Swagger UI and OpenAPI docs
                                         //,"/api/**" // Allow other API endpoints
                                 ).permitAll()

@@ -23,7 +23,6 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/tags")
-@SecurityRequirement(name = "bearerAuth")
 public class TagController {
     private final TagService tagService;
     private final UserService userService;

@@ -1,6 +1,7 @@
 package com.example.BuzzByte.service;
 
 import com.example.BuzzByte.model.Post;
+import com.example.BuzzByte.utils.dto.PostDto;
 import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,6 +18,8 @@ public interface PostService {
     void deletePost(long postId);
     @Transactional
     Post getPost(long postId);
+    //@Transactional
+    //PostDto getPostDto(long postId);
     @Transactional
     Post getPost(String postTitle);
     @Transactional

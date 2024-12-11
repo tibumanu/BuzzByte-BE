@@ -16,6 +16,7 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -38,6 +39,7 @@ public class AuthController {
             summary = "Login endpoint. Generates the JWT needed for further operations."
     )
     @PostMapping("/login")
+    @Transactional
     public Result<String> login(@RequestBody LoginRequest loginRequest) {
 
         var token = this.authenticationService.authenticate(loginRequest);

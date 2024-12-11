@@ -29,7 +29,7 @@ public class AdminController {
             description = "Returns a list of all users."
     )
     @GetMapping("/users")
-    @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Result<List<UserAdminDto>> getAllUsers() {
         var users = this.userAdminDtoConverter.createFromEntities(this.userService.getUsers());
         return new Result<>(true, HttpStatus.OK.value(), "Here is a list of all the users.", users);
@@ -40,7 +40,7 @@ public class AdminController {
             description = "Returns a user, based on the given id."
     )
     @GetMapping("/users/{id}")
-    @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Result<UserAdminDto> getUser(@PathVariable long id) {
         var user = this.userAdminDtoConverter.createFromEntity(this.userService.getUserById(id));
         return new Result<>(true, HttpStatus.OK.value(), String.format("Here is the user with id: %d", id), user);
@@ -51,7 +51,7 @@ public class AdminController {
             description = "Updates a given user's account status, based on username."
     )
     @PutMapping("/users/enable")
-    @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Result<?> enableUser(@RequestBody EnableUserDto enableUserDto) {
         this.userService.enableUser(enableUserDto);
         return new Result<>(true, HttpStatus.OK.value(), String.format("User %s enabled/disabled.", enableUserDto.username()));

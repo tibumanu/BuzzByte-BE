@@ -18,6 +18,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.Console;
@@ -41,6 +42,7 @@ public class UserController {
             description = "Retrieves details about the current user, based on the JWT token."
     )
     @GetMapping()
+    @Transactional
     //@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN', 'SCOPE_ARHEO', 'SCOPE_LABWORKER', 'SCOPE_GUEST')")
     public Result<UserDto> getUser() {
         var username = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -78,4 +80,5 @@ public class UserController {
         UserDto updatedUserDto = userDtoConverter.createFromEntity(updatedUser);
         return new Result<>(true, HttpStatus.OK.value(), "Tags added successfully.", updatedUserDto);
     }
+
 }

@@ -12,6 +12,7 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 @Component
@@ -39,7 +40,8 @@ public class UserDtoConverter implements Converter<User, UserDto> {
                 entity.getEmail(),
                 entity.getRole(),
                 entity.getProfilePicture(),
-                entity.getTags().stream().map(new TagDtoConverter()::createFromEntity).collect(Collectors.toList())
+                entity.getTags().stream().map(new TagDtoConverter()::createFromEntity).collect(Collectors.toList()),
+                new ArrayList<>(entity.getBookmarks())
         );
     }
 
@@ -56,6 +58,7 @@ public class UserDtoConverter implements Converter<User, UserDto> {
                 .email(modifyUserDto.email())
                 .tags(tags)
                 .profilePicture(modifyUserDto.profilePicture())
+                //.bookmarks(new ArrayList<>())
                 .build();
     }
 }

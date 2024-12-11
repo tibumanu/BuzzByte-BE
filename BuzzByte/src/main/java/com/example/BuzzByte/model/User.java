@@ -45,6 +45,7 @@ public class User {
     private boolean isEnabled;
 
     @Lob
+    // @Basic(fetch = FetchType.EAGER)
     private byte[] profilePicture;  // null by default
 
     public static byte[] loadDefaultProfilePicture() {
@@ -72,4 +73,8 @@ public class User {
             )
     )
     private List<Tag> tags = new ArrayList<>();
+
+    // we'll store bookmarks: an array of post ids
+    @ElementCollection
+    private List<Long> bookmarks = new ArrayList<>();
 }

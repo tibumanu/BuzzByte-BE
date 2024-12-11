@@ -2,6 +2,7 @@ package com.example.BuzzByte.service;
 
 import com.example.BuzzByte.model.Post;
 import com.example.BuzzByte.repository.PostRepository;
+import com.example.BuzzByte.utils.dto.PostDto;
 import com.example.BuzzByte.utils.validation.GenericValidator;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.criteria.Join;
@@ -101,7 +102,10 @@ public class PostServiceImpl implements PostService{
         // the below is done to avoid lazy initialization exception; could be done in the repository, somehow, dunno
         Hibernate.initialize(post.get().getTags());
         Hibernate.initialize(post.get().getComments());
-        return post.get();
+        Post gottenPost = post.get();
+        Hibernate.initialize(gottenPost.getUser().getTags());
+        Hibernate.initialize(gottenPost.getUser().getBookmarks());
+        return gottenPost;  // !: Make sure this is eventually converted to a PostDto; otherwise will blow JSON up
     }
 
     @Override
@@ -164,6 +168,7 @@ public class PostServiceImpl implements PostService{
             Hibernate.initialize(post.getTags());
             Hibernate.initialize(post.getComments());
             Hibernate.initialize(post.getUser().getTags());
+            Hibernate.initialize(post.getUser().getBookmarks());
         });
         return found;
     }

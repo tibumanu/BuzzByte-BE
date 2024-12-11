@@ -12,6 +12,7 @@ public record UserDto(
         String email,
         Role role,
         byte[] profilePicture,
-        List<TagDto> tags
+        List<TagDto> tags,
+        List<Long> bookmarksPostIds
 ) {
 }

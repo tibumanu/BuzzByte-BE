@@ -64,7 +64,7 @@ public class BookmarkController {
             summary = "Get all bookmarks of user",
             description = "Retrieves all bookmarks as postDtos of a user based on the userId."
     )
-    @GetMapping("/{userId}/postDtos")
+    @GetMapping("/{userId}/posts")
     public Result<List<PostDto>> getBookmarksPostsDtosOfUser(@PathVariable Long userId) {
         List<Long> bookmarksIds = userService.getBookmarksIdsOfUser(userId);
         List<PostDto> bookmarkPostDtos = bookmarksIds.stream()

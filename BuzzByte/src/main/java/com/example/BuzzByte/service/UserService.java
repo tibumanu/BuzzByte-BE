@@ -23,6 +23,7 @@ public interface UserService {
     User addTagsToUser(Long userId, List<String> newTags);
     User addBookmarkToUser(Long userId, Long postId);
     User removeBookmarkFromUser(Long userId, Long postId);
+    boolean isPostBookmarkedByUser(Long userId, Long postId);
     List<Long> getBookmarksIdsOfUser(Long userId);
     // List<PostDto> getBookmarksPostsDtosOfUser(Long userId);
     // ^ not able to implement this method because of the cyclic dependency between PostDtoConverter and UserService

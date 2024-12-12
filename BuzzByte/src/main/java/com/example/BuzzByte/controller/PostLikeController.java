@@ -72,5 +72,12 @@ public class PostLikeController {
         return new Result<>(true, HttpStatus.OK.value(), "Like deleted successfully", null);
     }
 
+    @GetMapping("/post/{postId}/liked")
+    public Result<Boolean> isPostLikedByUser(@PathVariable Long postId) {
+        var user = userService.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        boolean isLiked = postLikeService.isPostLikedByUser(postId, user.getId());
+        return new Result<>(true, HttpStatus.OK.value(), "Like status retrieved successfully", isLiked);
+    }
+
 
 }

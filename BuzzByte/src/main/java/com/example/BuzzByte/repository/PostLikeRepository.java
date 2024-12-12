@@ -13,4 +13,5 @@ public interface PostLikeRepository extends LikeRepository<PostLike> {
     public List<PostLike> findPostLikeByPostId(long postId);
     // method to return all likes for a user
     public List<PostLike> findPostLikeByUserId(long userId);
+    boolean existsByPostIdAndUserId(Long postId, Long userId);
 }

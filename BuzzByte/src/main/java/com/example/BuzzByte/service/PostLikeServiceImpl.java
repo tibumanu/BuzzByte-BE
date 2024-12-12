@@ -80,4 +80,7 @@ public class PostLikeServiceImpl implements PostLikeService {
                 .orElseThrow(() -> new EntityNotFoundException("Like not found"));
     }
 
+    public boolean isPostLikedByUser(Long postId, Long userId) {
+        return postLikeRepository.existsByPostIdAndUserId(postId, userId);
+    }
 }

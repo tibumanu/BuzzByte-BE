@@ -18,4 +18,5 @@ public interface PostLikeService {
     PostLike addLike(PostLike like);
     @Transactional
     PostLike getLike(Long likeId);
+    boolean isPostLikedByUser(Long postId, Long userId);
 }

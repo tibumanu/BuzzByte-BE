@@ -192,6 +192,14 @@ public class UserServiceImpl implements UserService {
         return user.getBookmarks();
     }
 
+    @Override
+    @Transactional
+    public boolean isPostBookmarkedByUser(Long userId, Long postId) {
+        var user = getUserById(userId);
+        Hibernate.initialize(user.getTags());
+        Hibernate.initialize(user.getBookmarks());
+        return user.getBookmarks().contains(postId);
+    }
 
     // The following is impossible since the PostDtoConverter is not available in this class - circular dependency
     // since PostDtoConverter depends on UserService

@@ -13,6 +13,7 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -71,5 +72,13 @@ public class BookmarkController {
                 .map(postId -> postDtoConverter.createFromEntity(postService.getPost(postId)))
                 .toList();
         return new Result<>(true, HttpStatus.OK.value(), "Retrieved all bookmarks of user.", bookmarkPostDtos);
+    }
+
+    @GetMapping("/post/{postId}/bookmarked")
+    public Result<Boolean> isPostBookmarked(@PathVariable Long postId) {
+        var user = userService.getUserByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
+        System.out.println(user.getUsername());
+        boolean isBookmarked = userService.isPostBookmarkedByUser(user.getId(), postId);
+        return new Result<>(true, HttpStatus.OK.value(), "Bookmark status retrieved successfully.", isBookmarked);
     }
 }

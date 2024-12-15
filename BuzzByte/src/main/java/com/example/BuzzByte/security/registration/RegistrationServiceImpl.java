@@ -92,7 +92,7 @@ public class RegistrationServiceImpl implements RegistrationService {
                 "<head>" +
                 "<style>" +
                 "body {font-family: Arial, sans-serif; margin: 20px;}" +
-                "h1 {color: #4CAF50;}" +
+                "h1" +
                 "p {font-size: 16px;}" +
                 "a.button {display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #4CAF50; text-decoration: none; border-radius: 5px;}" +
                 "</style>" +

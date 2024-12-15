@@ -40,6 +40,7 @@ public class PostLikeServiceImpl implements PostLikeService {
         try{
             Post post = like.getPost();
             post.setLikes(post.getLikes() - 1);
+            post.setUpdatedAt(post.getCreatedAt());
             postRepository.save(post);
             postLikeRepository.deleteById(likeId);
 
@@ -65,6 +66,7 @@ public class PostLikeServiceImpl implements PostLikeService {
             Post post = like.getPost();
             post.setLikes(post.getLikes() + 1);
             System.out.println(post.getLikes());
+            post.setUpdatedAt(post.getCreatedAt());
             postRepository.save(post);
             return postLikeRepository.save(like);
 

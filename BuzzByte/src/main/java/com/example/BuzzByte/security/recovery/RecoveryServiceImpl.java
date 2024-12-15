@@ -31,7 +31,7 @@ public class RecoveryServiceImpl implements RecoveryService {
                 "<head>" +
                 "<style>" +
                 "body {font-family: Arial, sans-serif; margin: 20px;}" +
-                "h1 {color: #4CAF50;}" +
+                "h1" +
                 "p {font-size: 16px;}" +
                 "</style>" +
                 "</head>" +
@@ -40,9 +40,8 @@ public class RecoveryServiceImpl implements RecoveryService {
                 "<p>If you did not request a password reset please check your account for any suspicious activity.</p>" +
                 "<p>Clicking on the link it will generate and automatic password which will be sent via email.</p>" +
                 "<p>" + token.getToken() + "</p>" +
-                "<h1> We should put a link to the website here. </h1>" +
                 "<p>The token will be available for 5 minutes. </p>" +
-                "<p>Best regards,<br/>The Team</p>" +
+                "<p>Best regards,<br/>BuzzByte/p>" +
                 "</body>" +
                 "</html>";
         emailService.sendHtmlEmail(user.getEmail(), "Password reset", htmlContent);

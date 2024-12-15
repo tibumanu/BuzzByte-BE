@@ -7,6 +7,7 @@ import com.example.BuzzByte.model.User;
 import com.example.BuzzByte.model.comments.PostComment;
 import com.example.BuzzByte.repository.*;
 import com.example.BuzzByte.security.config.RsaKeyProperties;
+import com.example.BuzzByte.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -37,6 +38,8 @@ public class BuzzByteApplication implements CommandLineRunner {
 
 	@Autowired
 	private PostCommentRepository postCommentRepository;
+	@Autowired
+	private PostService postService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BuzzByteApplication.class, args);
@@ -139,7 +142,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		Tag tag1 = tagRepository.findByName("Java").get();
 		post.setTags(new ArrayList<>(List.of(tag1)));
 		// save post after setting tags, since PostComment needs this post to exist
-		postRepository.save(post);
+		postService.addPost(post);
 
 		// PostComment
 		User userComment = new User();
@@ -173,7 +176,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		postComment2 = postCommentRepository.save(postComment2);
 
 		post.setComments(new ArrayList<>(List.of(postComment, postComment2)));
-		post = postRepository.save(post);
+		post = postService.addPost(post);
 
 
 		// Some other post
@@ -192,14 +195,14 @@ public class BuzzByteApplication implements CommandLineRunner {
 				"I can't believe such companies exist. Amazon is the best. AWS is the best. Jeff Bezos is the best.\n" +
 				"Also, he's not bald. He's just aerodynamic. He's not bald. He's just aerodynamic. He's not bald. He's just aerodynamic. ");
 		post.setUser(user);
-		post.setLikes(-8L);
+		post.setLikes(8L);
 
 		tag1 = tagRepository.findByName("Java").get();
 		Tag tag2 = tagRepository.findByName("Docker").get();
 		Tag tag3 = tagRepository.findByName("Kubernetes").get();
 		post.setTags(new ArrayList<>(List.of(tag1, tag2, tag3)));
 		// save post after setting tags, since PostComment needs this post to exist
-		postRepository.save(post);
+		postService.addPost(post);
 
 		// PostComment for this
 		userComment = new User();
@@ -219,7 +222,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		postComment.setUserId(userCommentId);
 		postComment = postCommentRepository.save(postComment);
 		post.setComments(new ArrayList<>(List.of(postComment)));
-		post = postRepository.save(post);
+		post = postService.addPost(post);
 
 
 		// Some other post
@@ -248,7 +251,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		Tag tag4 = tagRepository.findByName("Natural Language Processing (NLP)").get();
 		post.setTags(new ArrayList<>(List.of(tag1, tag2, tag3, tag4)));
 		// save post after setting tags, since PostComment needs this post to exist
-		postRepository.save(post);
+		postService.addPost(post);
 
 		// PostComment for this
 		userComment = new User();
@@ -269,7 +272,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		postComment.setUserId(userCommentId);
 		postComment = postCommentRepository.save(postComment);
 		post.setComments(new ArrayList<>(List.of(postComment)));
-		post = postRepository.save(post);
+		post = postService.addPost(post);
 
 
 		// other post
@@ -294,7 +297,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		tag2 = tagRepository.findByName("Data Science").get();
 		post.setTags(new ArrayList<>(List.of(tag1, tag2)));
 		// save post after setting tags, since PostComment needs this post to exist
-		postRepository.save(post);
+		postService.addPost(post);
 
 		// PostComment for this
 		userComment = new User();
@@ -328,7 +331,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		postComment2 = postCommentRepository.save(postComment2);
 
 		post.setComments(new ArrayList<>(List.of(postComment, postComment2)));
-		post = postRepository.save(post);
+		post = postService.addPost(post);
 
 		// other post
 		user = new User();
@@ -351,7 +354,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		tag1 = tagRepository.findByName("Business Intelligence").get();
 		post.setTags(new ArrayList<>(List.of(tag1)));
 		// save post after setting tags, since PostComment needs this post to exist
-		postRepository.save(post);
+		postService.addPost(post);
 
 		// PostComment for this
 		userComment = new User();
@@ -385,7 +388,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		postComment2 = postCommentRepository.save(postComment2);
 
 		post.setComments(new ArrayList<>(List.of(postComment, postComment2)));
-		post = postRepository.save(post);
+		post = postService.addPost(post);
 
 
 		// other post
@@ -409,7 +412,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		tag1 = tagRepository.findByName("Business Intelligence").get();
 		post.setTags(new ArrayList<>(List.of(tag1)));
 		// save post after setting tags, since PostComment needs this post to exist
-		postRepository.save(post);
+		postService.addPost(post);
 
 		// PostComment for this
 		userComment = new User();
@@ -444,7 +447,7 @@ public class BuzzByteApplication implements CommandLineRunner {
 		postComment2 = postCommentRepository.save(postComment2);
 
 		post.setComments(new ArrayList<>(List.of(postComment, postComment2)));
-		post = postRepository.save(post);
+		post = postService.addPost(post);
 
 
 

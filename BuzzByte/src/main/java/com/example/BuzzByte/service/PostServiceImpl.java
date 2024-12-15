@@ -28,6 +28,7 @@ public class PostServiceImpl implements PostService{
     private final GenericValidator<Post> postValidator;
 
     @Override
+    @Transactional
     public Post addPost(Post post) {
         try {
             // if post is null, throw exception
@@ -39,8 +40,9 @@ public class PostServiceImpl implements PostService{
                 post.setCreatedAt(LocalDateTime.now());
             }
             if (post.getUpdatedAt() == null) {
-                post.setUpdatedAt(LocalDateTime.now());
+                post.setUpdatedAt(post.getCreatedAt());
             }
+
             // validate
             postValidator.validate(post);
             return postRepository.save(post);
@@ -71,8 +73,8 @@ public class PostServiceImpl implements PostService{
             updatedPost.setComments(new ArrayList<>());
         }
         updatedPost.setUpdatedAt(LocalDateTime.now());
+        System.out.println(updatedPost.getLikes());
 
-        updatedPost.setLikes(post.getLikes());
         Hibernate.initialize(updatedPost.getComments());
         try{
             postValidator.validate(updatedPost);

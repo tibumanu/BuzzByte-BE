@@ -48,9 +48,13 @@ public class Post {
     @Column(nullable = false, name = "created_at", updatable = false) // prevent updates to this field after creation
     private LocalDateTime createdAt;
 
-    @UpdateTimestamp
     @Column(nullable = true, name = "updated_at")
     private LocalDateTime updatedAt;
+
+    @PrePersist
+    protected void onCreate() {
+        //this.updatedAt = this.createdAt;
+    }
 
     @Lob
     private byte[] image;  // null by default

@@ -185,6 +185,20 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
+    public void removeBookmarkFromAllUsers(Long postId) {
+        List<User> users = userRepository.findAll();
+        users.forEach(user -> {
+            Hibernate.initialize(user.getBookmarks());
+            Hibernate.initialize(user.getTags());
+            if (user.getBookmarks().stream().anyMatch(postIdIterator -> postIdIterator.equals(postId))) {
+                user.getBookmarks().remove(postId);
+                userRepository.save(user);
+            }
+        });
+    }
+
+    @Override
+    @Transactional
     public List<Long> getBookmarksIdsOfUser(Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + userId));

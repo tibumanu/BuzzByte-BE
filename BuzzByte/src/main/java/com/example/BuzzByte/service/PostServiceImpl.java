@@ -24,6 +24,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Service
 public class PostServiceImpl implements PostService{
+    private final UserService userService;
     private final PostRepository postRepository;
     private final GenericValidator<Post> postValidator;
 
@@ -88,6 +89,7 @@ public class PostServiceImpl implements PostService{
     public void deletePost(long postId) {
         try {
             postRepository.deleteById(postId);
+            userService.removeBookmarkFromAllUsers(postId);
         } catch (Exception e) {
             throw new RuntimeException("Error deleting post: " + e.getMessage());
         }
